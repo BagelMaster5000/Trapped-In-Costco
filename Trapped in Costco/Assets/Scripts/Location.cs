@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Location", menuName = "ScriptableObjects/Location", order = 1)]
 public class Location : ScriptableObject
 {
     public Sprite background;

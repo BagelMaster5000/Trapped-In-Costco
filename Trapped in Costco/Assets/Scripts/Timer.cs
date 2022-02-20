@@ -39,4 +39,13 @@ public class Timer : MonoBehaviour
     }
 
     public float GetTimeSeconds() { return curTime; }
+    public string GetTimeFormatted()
+    {
+        int curMinutes = Mathf.FloorToInt(curTime) / 60;
+        int curSeconds = Mathf.FloorToInt(curTime) % 60;
+        int curMilliseconds = Mathf.FloorToInt(curTime * 100) % 100;
+        string timeFormatted = curMinutes + ":" + curSeconds.ToString("00") + "." + curMilliseconds.ToString("00");
+
+        return timeFormatted;
+    }
 }
