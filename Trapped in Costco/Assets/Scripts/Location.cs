@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Location", menuName = "ScriptableObjects/Location", order = 1)]
 public class Location : ScriptableObject
 {
+    public int index;
     public Sprite background;
 
     [Header("Directional Locations")]
@@ -11,6 +12,7 @@ public class Location : ScriptableObject
     public Location downLocation;
     public Location leftLocation;
 
+    [System.Serializable]
     public struct ItemSpawnLoc
     {
         public Item item;

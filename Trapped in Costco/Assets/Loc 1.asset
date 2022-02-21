@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8bf2c969742704c8adfe3b0e2f0d02, type: 3}
   m_Name: Loc 1
   m_EditorClassIdentifier: 
-  background: {fileID: 21300000, guid: 66878a586c8127449b4d187070660f7d, type: 3}
+  index: 0
+  background: {fileID: 21300000, guid: c4271d39ed4675e4297c42ee3d27ccac, type: 3}
   upLocation: {fileID: 0}
   rightLocation: {fileID: 11400000, guid: d477967c4c0612d4abed4e134352b59a, type: 2}
   downLocation: {fileID: 0}
   leftLocation: {fileID: 0}
+  itemsToSpawn:
+  - item: {fileID: 11400000, guid: 94a40877317eb0042b92ee70337183af, type: 2}
+    spawnLoc: {x: 49, y: 18.1}
+  - item: {fileID: 11400000, guid: 94a40877317eb0042b92ee70337183af, type: 2}
+    spawnLoc: {x: -51, y: -1}
+  - item: {fileID: 11400000, guid: 94a40877317eb0042b92ee70337183af, type: 2}
+    spawnLoc: {x: 4.6, y: -6.2}
   allQuips: []

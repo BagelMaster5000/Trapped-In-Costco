@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8bf2c969742704c8adfe3b0e2f0d02, type: 3}
   m_Name: Loc 3
   m_EditorClassIdentifier: 
-  background: {fileID: 21300000, guid: d42adbb608bea25498da2c24967071e5, type: 3}
+  index: 2
+  background: {fileID: 21300000, guid: f8ef84e1db2e9ee4db1884977ab5b5ee, type: 3}
   upLocation: {fileID: 0}
   rightLocation: {fileID: 0}
   downLocation: {fileID: 0}
   leftLocation: {fileID: 11400000, guid: d477967c4c0612d4abed4e134352b59a, type: 2}
+  itemsToSpawn: []
   allQuips: []

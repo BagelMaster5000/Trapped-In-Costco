@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     bool[] visitedLocations;
 
     GameObject heldItem = null;
+    GameObject[] itemLocationFolders;
     GameObject[][] itemsInLocations;
     Item[] allItems;
     int shoppingListLength;
@@ -60,6 +61,31 @@ public class GameController : MonoBehaviour
 
         OnGamePause = () => { movementInput.Disable(); };
         OnGameUnpause = () => { movementInput.Enable(); };
+
+
+        itemLocationFolders = new GameObject[allLocations.Length];
+        itemsInLocations = new GameObject[allLocations.Length][];
+        for (int l = 0; l < allLocations.Length; l++)
+        {
+            GameObject curFolder = new GameObject("Location " + l + " Items");
+            curFolder.transform.parent = transform;
+            curFolder.SetActive(false);
+
+            itemLocationFolders[l] = curFolder;
+
+
+            itemsInLocations[l] = new GameObject[allLocations[l].itemsToSpawn.Length];
+            for (int i = 0; i < itemsInLocations[l].Length; i++)
+            {
+                GameObject curItem = Instantiate(allLocations[l].itemsToSpawn[i].item.itemObject, curFolder.transform);
+                curItem.transform.position = (Vector3)allLocations[l].itemsToSpawn[i].spawnLoc + Vector3.forward * 86;
+                curItem.transform.localScale = Vector3.one * 5.35f;
+                curItem.SetActive(true);
+
+                itemsInLocations[l][i] = curItem;
+            }
+        }
+
 
         RefreshItems();
     }
@@ -133,7 +159,10 @@ public class GameController : MonoBehaviour
     }
     void RefreshItems()
     {
-        // Show/hide items depending on current location
+        for (int l = 0; l < allLocations.Length; l++)
+        {
+            itemLocationFolders[l].SetActive(currentLocation.index == l);
+        }
     }
 
     void Pickup()
