@@ -2771,7 +2771,7 @@ MonoBehaviour:
   spinSpeedStabilizationFactor: 10
   itemLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   backgroundLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -3207,6 +3207,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2237222600016217938, guid: 172f33346182bcd4882a06a8b44186e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680013723035870112, guid: 172f33346182bcd4882a06a8b44186e4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680013723035870112, guid: 172f33346182bcd4882a06a8b44186e4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680013723035870112, guid: 172f33346182bcd4882a06a8b44186e4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2680013723035870112, guid: 172f33346182bcd4882a06a8b44186e4, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3180781786333412439, guid: 172f33346182bcd4882a06a8b44186e4, type: 3}

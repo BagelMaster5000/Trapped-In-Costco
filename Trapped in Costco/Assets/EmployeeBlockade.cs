@@ -10,12 +10,12 @@ public class EmployeeBlockade : MonoBehaviour
     [SerializeField] Sprite[] allEmployeeGraphics;
     [SerializeField] SpriteRenderer employeeSpriteRenderer;
 
-    BoxCollider blockingCollider;
+    BoxCollider[] blockingColliders;
     Animator animator;
 
     private void Awake()
     {
-        blockingCollider = GetComponent<BoxCollider>();
+        blockingColliders = GetComponents<BoxCollider>();
         animator = GetComponent<Animator>();
     }
 
@@ -33,12 +33,13 @@ public class EmployeeBlockade : MonoBehaviour
 
     void HitByItem()
     {
-        GameController.staticReference.ClearBlockade();
+        GameController.staticReference.ClearBlockedDirections();
 
-        blockingCollider.enabled = false;
+        foreach (BoxCollider bc in blockingColliders)
+            bc.enabled = false;
 
         animator.SetTrigger("Killed");
     }
 
-    public bool ReadyToBeDestroyed() { return !blockingCollider.enabled; }
+    public bool ReadyToBeDestroyed() { return !blockingColliders[0].enabled; }
 }

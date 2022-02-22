@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5369745859008954387}
   - component: {fileID: 6770895910347426206}
   - component: {fileID: 602041926489252593}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 8203353058488358992}
   - component: {fileID: 6071204644969154629}
   - component: {fileID: 1022049563454150564}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1316185942041688849}
   - component: {fileID: 1316185942041688850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Employee Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 2850379918519649874}
   - component: {fileID: 2258633160678852834}
   - component: {fileID: 2058432484252966408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Employee Blockade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +423,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3505374836075795914}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 1619396986099683238}
   - component: {fileID: 3260317739933336375}
   - component: {fileID: 4252367447510858512}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Speech Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}

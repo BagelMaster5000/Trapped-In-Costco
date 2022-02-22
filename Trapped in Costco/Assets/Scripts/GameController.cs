@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -60,6 +61,9 @@ public class GameController : MonoBehaviour
     int numFreeSamples = 1;
     bool[] freeSampleLocations;
     int buttonMashesToEscapeFreeSamples = 7;
+    int remainingButtonMashes = -1;
+    float afterFreeSampleKillMovementDisableTime = 0.5f;
+    float afterFreeSampleKillMovementReenableTime;
     bool[] curBlockedDirections = { false, false, false, false }; // up, right, down, left
 
 
@@ -107,50 +111,8 @@ public class GameController : MonoBehaviour
         ItemsInLocationFoldersSetup();
         RefreshItemsAtLocation();
 
-        // Blockades
-        if (allLocations.Length < numBlockades)
-            Debug.LogError("Not enough locations to populate for number of blockades");
-        else
-        {
-            List<Location> tempLocations = new List<Location>();
-            for (int i = 1; i < allLocations.Length; i++)
-                tempLocations.Add(allLocations[i]);
-
-            blockedLocations = new bool[allLocations.Length];
-            for (int b = 0; b < numBlockades; b++)
-            {
-                int randomIndex = UnityEngine.Random.Range(0, tempLocations.Count);
-                Location randomLocation = tempLocations[randomIndex];
-                tempLocations.RemoveAt(randomIndex);
-
-                Instantiate(blockadePrefab, itemLocationFolders[randomLocation.index].transform);
-                blockedLocations[randomLocation.index] = true;
-            }
-        }
-
-        // Free Samples
-        if (allLocations.Length < numFreeSamples + numBlockades)
-            Debug.LogError("Not enough locations to populate for number of free sample stands");
-        else
-        {
-            List<Location> tempLocations = new List<Location>();
-            for (int i = 1; i < allLocations.Length; i++)
-            {
-                if (!blockedLocations[i])
-                    tempLocations.Add(allLocations[i]);
-            }
-
-            freeSampleLocations = new bool[allLocations.Length];
-            for (int b = 0; b < numFreeSamples; b++)
-            {
-                int randomIndex = UnityEngine.Random.Range(0, tempLocations.Count);
-                Location randomLocation = tempLocations[randomIndex];
-                tempLocations.RemoveAt(randomIndex);
-
-                Instantiate(freeSamplePrefab, itemLocationFolders[randomLocation.index].transform);
-                freeSampleLocations[randomLocation.index] = true;
-            }
-        }
+        BlockadesSetup();
+        FreeSamplesSetup();
     }
 
     private void InputsSetup()
@@ -250,6 +212,54 @@ public class GameController : MonoBehaviour
 
         RefreshShoppingListTexts();
     }
+
+    private void BlockadesSetup()
+    {
+        if (allLocations.Length < numBlockades)
+            Debug.LogError("Not enough locations to populate for number of blockades");
+        else
+        {
+            List<Location> tempLocations = new List<Location>();
+            for (int i = 1; i < allLocations.Length; i++)
+                tempLocations.Add(allLocations[i]);
+
+            blockedLocations = new bool[allLocations.Length];
+            for (int b = 0; b < numBlockades; b++)
+            {
+                int randomIndex = UnityEngine.Random.Range(0, tempLocations.Count);
+                Location randomLocation = tempLocations[randomIndex];
+                tempLocations.RemoveAt(randomIndex);
+
+                Instantiate(blockadePrefab, itemLocationFolders[randomLocation.index].transform);
+                blockedLocations[randomLocation.index] = true;
+            }
+        }
+    }
+    private void FreeSamplesSetup()
+    {
+        if (allLocations.Length < numFreeSamples + numBlockades)
+            Debug.LogError("Not enough locations to populate for number of free sample stands");
+        else
+        {
+            List<Location> tempLocations = new List<Location>();
+            for (int i = 1; i < allLocations.Length; i++)
+            {
+                if (!blockedLocations[i])
+                    tempLocations.Add(allLocations[i]);
+            }
+
+            freeSampleLocations = new bool[allLocations.Length];
+            for (int b = 0; b < numFreeSamples; b++)
+            {
+                int randomIndex = UnityEngine.Random.Range(0, tempLocations.Count);
+                Location randomLocation = tempLocations[randomIndex];
+                tempLocations.RemoveAt(randomIndex);
+
+                Instantiate(freeSamplePrefab, itemLocationFolders[randomLocation.index].transform);
+                freeSampleLocations[randomLocation.index] = true;
+            }
+        }
+    }
     #endregion
 
     public void StartGame() { } // Sets game state to playing
@@ -288,6 +298,24 @@ public class GameController : MonoBehaviour
     #region Movement
     void MoveInputRecieved(Vector2 input)
     {
+        if (freeSampleLocations[currentLocation.index])
+        {
+            remainingButtonMashes--;
+            Transform currentLocationFolder = itemLocationFolders[currentLocation.index].transform;
+            FreeSamplesStand freeSamplesStand = currentLocationFolder.GetComponentInChildren<FreeSamplesStand>();
+            freeSamplesStand.Attacked();
+
+            if (remainingButtonMashes <= 0)
+            {
+                ClearBlockedDirections();
+                freeSamplesStand.Killed();
+
+                afterFreeSampleKillMovementReenableTime = Time.time + afterFreeSampleKillMovementDisableTime;
+            }
+        }
+
+        if (Time.time < afterFreeSampleKillMovementReenableTime) return;
+
         if (input.y > 0.8f) MoveUp();
         else if (input.x > 0.8f) MoveRight();
         else if (input.y < -0.8f) MoveDown();
@@ -295,7 +323,7 @@ public class GameController : MonoBehaviour
     }
     void MoveUp()
     {
-        if (currentLocation.upLocation != null)
+        if (currentLocation.upLocation != null && !curBlockedDirections[0])
         {
             Location previousLocation = currentLocation;
             currentLocation = currentLocation.upLocation;
@@ -306,7 +334,7 @@ public class GameController : MonoBehaviour
     }
     void MoveRight()
     {
-        if (currentLocation.rightLocation != null)
+        if (currentLocation.rightLocation != null && !curBlockedDirections[1])
         {
             Location previousLocation = currentLocation;
             currentLocation = currentLocation.rightLocation;
@@ -317,7 +345,7 @@ public class GameController : MonoBehaviour
     }
     void MoveDown()
     {
-        if (currentLocation.downLocation != null)
+        if (currentLocation.downLocation != null && !curBlockedDirections[2])
         {
             Location previousLocation = currentLocation;
             currentLocation = currentLocation.downLocation;
@@ -328,7 +356,7 @@ public class GameController : MonoBehaviour
     }
     void MoveLeft()
     {
-        if (currentLocation.leftLocation != null)
+        if (currentLocation.leftLocation != null && !curBlockedDirections[3])
         {
             Location previousLocation = currentLocation;
             currentLocation = currentLocation.leftLocation;
@@ -342,6 +370,7 @@ public class GameController : MonoBehaviour
     void ArriveAtLocation(Location previousLocation)
     {
         DestroyObstaclesFromPreviousLocation(previousLocation);
+        RefreshBlockedDirections(previousLocation);
 
         background.sprite = currentLocation.background;
         RefreshItemsAtLocation();
@@ -352,20 +381,44 @@ public class GameController : MonoBehaviour
     private void DestroyObstaclesFromPreviousLocation(Location previousLocation)
     {
         Transform previousLocationFolder = itemLocationFolders[previousLocation.index].transform;
-        for (int c = 0; c < previousLocationFolder.childCount; c++)
-        {
-            EmployeeBlockade employeeBlockade = previousLocationFolder.GetChild(c).GetComponent<EmployeeBlockade>();
-            if (employeeBlockade != null && employeeBlockade.ReadyToBeDestroyed())
-            {
-                employeeBlockade.gameObject.SetActive(false);
-            }
 
-            FreeSamplesStand freeSamplesStand = previousLocationFolder.GetChild(c).GetComponent<FreeSamplesStand>();
-            if (freeSamplesStand != null && freeSamplesStand.ReadyToBeDestroyed())
-            {
-                freeSamplesStand.gameObject.SetActive(false);
-            }
+        EmployeeBlockade employeeBlockade = previousLocationFolder.GetComponentInChildren<EmployeeBlockade>();
+        if (employeeBlockade != null && employeeBlockade.ReadyToBeDestroyed())
+            employeeBlockade.gameObject.SetActive(false);
+
+        FreeSamplesStand freeSamplesStand = previousLocationFolder.GetComponentInChildren<FreeSamplesStand>();
+        if (freeSamplesStand != null && freeSamplesStand.ReadyToBeDestroyed())
+            freeSamplesStand.gameObject.SetActive(false);
+    }
+    private void RefreshBlockedDirections(Location previousLocation)
+    {
+        if (blockedLocations[currentLocation.index])
+        {
+            curBlockedDirections[0] = previousLocation != currentLocation.upLocation;
+            curBlockedDirections[1] = previousLocation != currentLocation.rightLocation;
+            curBlockedDirections[2] = previousLocation != currentLocation.downLocation;
+            curBlockedDirections[3] = previousLocation != currentLocation.leftLocation;
         }
+        else if (freeSampleLocations[currentLocation.index])
+        {
+            remainingButtonMashes = buttonMashesToEscapeFreeSamples;
+
+            for (int d = 0; d < curBlockedDirections.Length; d++)
+                curBlockedDirections[d] = true;
+        }
+        else
+        {
+            for (int d = 0; d < curBlockedDirections.Length; d++)
+                curBlockedDirections[d] = false;
+        }
+    }
+    public void ClearBlockedDirections()
+    {
+        blockedLocations[currentLocation.index] = false;
+        freeSampleLocations[currentLocation.index] = false;
+
+        for (int d = 0; d < curBlockedDirections.Length; d++)
+            curBlockedDirections[d] = false;
     }
 
     void RefreshItemsAtLocation()
@@ -375,6 +428,7 @@ public class GameController : MonoBehaviour
             itemLocationFolders[l].SetActive(currentLocation.index == l);
         }
     }
+
 
     void RefreshShoppingListTexts()
     {
@@ -391,6 +445,7 @@ public class GameController : MonoBehaviour
     }
     void ShoppingListItemFound() { } // Play check animation
 
+
     void ClickInputRecieved()
     {
         if (heldItem == null)
@@ -405,6 +460,8 @@ public class GameController : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, 500, itemLayer))
         {
+            if (!hit.transform.CompareTag("CostcoProduct")) return;
+
             heldItem = hit.transform.gameObject;
             heldItem.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             heldItem.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -485,10 +542,4 @@ public class GameController : MonoBehaviour
     void Clap() { }
     void ThumbsUp() { }
     void Angry() { }
-
-    public void ClearBlockade()
-    {
-        for (int d = 0; d < curBlockedDirections.Length; d++)
-            curBlockedDirections[d] = false;
-    }
 }

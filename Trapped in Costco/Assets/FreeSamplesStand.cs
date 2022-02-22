@@ -9,12 +9,12 @@ public class FreeSamplesStand : MonoBehaviour
     [SerializeField] Sprite[] allFreeSampleGraphics;
     [SerializeField] SpriteRenderer freeSampleSpriteRenderer;
 
-    BoxCollider blockingCollider;
+    BoxCollider[] blockingColliders;
     Animator animator;
 
     private void Awake()
     {
-        blockingCollider = GetComponent<BoxCollider>();
+        blockingColliders = GetComponents<BoxCollider>();
         animator = GetComponent<Animator>();
     }
 
@@ -27,17 +27,23 @@ public class FreeSamplesStand : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("CostcoProduct"))
-            HitByItem();
+            Killed();
     }
 
-    void HitByItem()
+    public void Attacked()
     {
-        GameController.staticReference.ClearBlockade();
+        animator.SetTrigger("Attacked");
+    }
 
-        blockingCollider.enabled = false;
+    public void Killed()
+    {
+        GameController.staticReference.ClearBlockedDirections();
+
+        foreach (BoxCollider bc in blockingColliders)
+            bc.enabled = false;
 
         animator.SetTrigger("Killed");
     }
 
-    public bool ReadyToBeDestroyed() { return !blockingCollider.enabled; }
+    public bool ReadyToBeDestroyed() { return !blockingColliders[0].enabled; }
 }
