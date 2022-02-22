@@ -19,10 +19,10 @@ MonoBehaviour:
   downLocation: {fileID: 0}
   leftLocation: {fileID: 0}
   itemsToSpawn:
-  - item: {fileID: 11400000, guid: 94a40877317eb0042b92ee70337183af, type: 2}
+  - item: {fileID: 11400000, guid: ef4fef361450d2d448cf0c6722da2d07, type: 2}
     spawnLoc: {x: 49, y: 18.1}
-  - item: {fileID: 11400000, guid: 94a40877317eb0042b92ee70337183af, type: 2}
+  - item: {fileID: 11400000, guid: d59e6827441b8cc498fa19825c1f9058, type: 2}
     spawnLoc: {x: -51, y: -1}
-  - item: {fileID: 11400000, guid: 94a40877317eb0042b92ee70337183af, type: 2}
+  - item: {fileID: 11400000, guid: 5283f782236799248b1e16446d98aedb, type: 2}
     spawnLoc: {x: 4.6, y: -6.2}
   allQuips: []

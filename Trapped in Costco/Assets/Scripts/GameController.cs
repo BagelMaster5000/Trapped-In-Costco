@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,13 +7,18 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    public enum GameState { PLAYING, STARTMENU, PAUSEMENU, WINMENU };
+    public GameState gameState = GameState.STARTMENU;
+
     [Header("Controls")]
     [SerializeField] InputAction movementInput;
     [SerializeField] InputAction clickInput;
     [SerializeField] InputAction spinInput;
-
-    public enum GameState {PLAYING, STARTMENU, PAUSEMENU, WINMENU};
-    public GameState gameState = GameState.STARTMENU;
+    [SerializeField] InputAction pocketInput;
+    [SerializeField] InputAction smashInput;
+    [SerializeField] InputAction clapInput;
+    [SerializeField] InputAction thumbsUpInput;
+    [SerializeField] InputAction angryInput;
 
     Timer timer;
 
@@ -34,13 +40,15 @@ public class GameController : MonoBehaviour
     GameObject heldItem = null;
     GameObject[] itemLocationFolders;
     GameObject[][] itemsInLocations;
-    Item[] allItems;
 
-    int shoppingListLength;
+    [Header("Shopping List")]
+    [SerializeField] int numShoppingListItems = 4;
+    [SerializeField] Item[] availableItems;
     Item[] shoppingListItems;
     bool[] shoppingListCompletion;
-    TextMeshProUGUI[] shoppingListTexts;
-    Animator[] shoppingListAnimators;
+    [SerializeField] TextMeshProUGUI[] shoppingListTexts;
+    [SerializeField] Animator[] shoppingListAnimators;
+    [SerializeField] Transform shoppingCartStorage;
 
     public Action OnGameStart;
     public Action OnGamePause;
@@ -48,15 +56,15 @@ public class GameController : MonoBehaviour
     public Action OnGameWin;
     public Action OnGameRestart;
     public Action OnGameExit;
-           
+
     public Action<Location> OnArrivedAtLocation;
     public Action<string> OnQuip;
-           
+
     public Action OnMoveUp;
     public Action OnMoveRight;
     public Action OnMoveDown;
     public Action OnMoveLeft;
-           
+
     public Action<GameObject, string> OnPickup;
     public Action OnThrow;
     public Action OnPocket;
@@ -65,7 +73,7 @@ public class GameController : MonoBehaviour
     public Action OnClap;
     public Action OnThumbsUp;
     public Action OnAngry;
-           
+
     public Action OnGotCorrectItem;
     public Action OnGotWrongItem;
 
@@ -76,8 +84,10 @@ public class GameController : MonoBehaviour
 
         InputsSetup();
 
+        ShoppingListSetup();
+
         ItemsInLocationFoldersSetup();
-        RefreshItems();
+        RefreshItemsAtLocation();
     }
 
     private void InputsSetup()
@@ -88,18 +98,40 @@ public class GameController : MonoBehaviour
         clickInput.Enable();
         spinInput.performed += ctx => Spin();
         spinInput.Enable();
+        pocketInput.performed += ctx => Pocket();
+        pocketInput.Enable();
+        smashInput.performed += ctx => Smash();
+        smashInput.Enable();
+        clapInput.performed += ctx => Clap();
+        clapInput.Enable();
+        thumbsUpInput.performed += ctx => ThumbsUp();
+        thumbsUpInput.Enable();
+        angryInput.performed += ctx => Angry();
+        angryInput.Enable();
 
         OnGamePause = () =>
         {
             movementInput.Disable();
             clickInput.Disable();
             spinInput.Disable();
+            spinInput.Disable();
+            pocketInput.Disable();
+            smashInput.Disable();
+            clapInput.Disable();
+            thumbsUpInput.Disable();
+            angryInput.Disable();
         };
         OnGameUnpause = () =>
         {
             movementInput.Enable();
             clickInput.Enable();
             spinInput.Enable();
+            spinInput.Enable();
+            pocketInput.Enable();
+            smashInput.Enable();
+            clapInput.Enable();
+            thumbsUpInput.Enable();
+            angryInput.Enable();
         };
     }
 
@@ -122,11 +154,38 @@ public class GameController : MonoBehaviour
                 GameObject curItem = Instantiate(allLocations[l].itemsToSpawn[i].item.itemObject, curFolder.transform);
                 curItem.transform.position = (Vector3)allLocations[l].itemsToSpawn[i].spawnLoc + Vector3.forward * 86;
                 curItem.transform.localScale = Vector3.one * 5.35f;
+                curItem.name = allLocations[l].itemsToSpawn[i].item.itemName;
                 curItem.SetActive(true);
 
                 itemsInLocations[l][i] = curItem;
             }
         }
+    }
+
+    private void ShoppingListSetup()
+    {
+        if (availableItems.Length < numShoppingListItems)
+            Debug.LogError("Not even available items to populate shopping list");
+        else
+        {
+            List<Item> tempItems = new List<Item>();
+            for (int i = 0; i < availableItems.Length; i++)
+                tempItems.Add(availableItems[i]);
+
+            shoppingListItems = new Item[numShoppingListItems];
+            shoppingListCompletion = new bool[numShoppingListItems];
+            for (int n = 0; n < numShoppingListItems; n++)
+            {
+                int randomIndex = UnityEngine.Random.Range(0, tempItems.Count);
+                Item randomItem = tempItems[randomIndex];
+                tempItems.RemoveAt(randomIndex);
+
+                shoppingListItems[n] = randomItem;
+                shoppingListCompletion[n] = false;
+            }
+        }
+
+        RefreshShoppingListTexts();
     }
     #endregion
 
@@ -216,17 +275,32 @@ public class GameController : MonoBehaviour
     void ArriveAtLocation()
     {
         background.sprite = currentLocation.background;
-        RefreshItems();
+        RefreshItemsAtLocation();
 
         OnArrivedAtLocation?.Invoke(currentLocation);
     }
-    void RefreshItems()
+    void RefreshItemsAtLocation()
     {
         for (int l = 0; l < allLocations.Length; l++)
         {
             itemLocationFolders[l].SetActive(currentLocation.index == l);
         }
     }
+
+    void RefreshShoppingListTexts()
+    {
+        for (int t = 0; t < shoppingListTexts.Length; t++)
+        {
+            if (t < numShoppingListItems)
+            {
+                shoppingListTexts[t].text = shoppingListItems[t].itemName;
+                shoppingListTexts[t].color = shoppingListCompletion[t] ? Color.green : Color.white;
+            }
+            else
+                shoppingListTexts[t].text = "";
+        }
+    }
+    void ShoppingListItemFound() { } // Play check animation
 
     void ClickInputRecieved()
     {
@@ -238,7 +312,7 @@ public class GameController : MonoBehaviour
     void Pickup()
     {
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-        Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100, Color.red, 100);
+        //Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100, Color.red, 100);
 
         if (Physics.Raycast(ray, out RaycastHit hit, 500, itemLayer))
         {
@@ -246,14 +320,16 @@ public class GameController : MonoBehaviour
             heldItem.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             heldItem.GetComponent<Rigidbody>().velocity = Vector3.zero;
             hit.transform.parent = itemHoldLoc;
-        }
 
-        OnPickup?.Invoke(heldItem, "Test Name");
+            OnPickup?.Invoke(heldItem, heldItem.name);
+        }
+        else
+            OnPickup?.Invoke(null, "");
     }
     void Throw()
     {
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-        Debug.DrawLine(Camera.main.transform.position, Mouse.current.position.ReadValue(), Color.red);
+        //Debug.DrawLine(Camera.main.transform.position, Mouse.current.position.ReadValue(), Color.red);
 
         if (Physics.Raycast(ray, out RaycastHit hit, 500, backgroundLayer))
         {
@@ -267,8 +343,49 @@ public class GameController : MonoBehaviour
 
         OnThrow?.Invoke();
     }
-    void Pocket() { }
-    void Smash() { }
+    void Pocket()
+    {
+        if (heldItem == null) return;
+
+        bool itemFoundInShoppingList = false;
+        string itemName = heldItem.name;
+        for (int s = 0; s < shoppingListItems.Length && !itemFoundInShoppingList; s++)
+        {
+            if (!shoppingListCompletion[s] && itemName == shoppingListItems[s].itemName)
+            {
+                shoppingListCompletion[s] = true;
+                RefreshShoppingListTexts();
+                // TODO Play check animation for collected item
+
+                print("got correct item");
+                OnGotCorrectItem?.Invoke();
+
+                itemFoundInShoppingList = true;
+            }
+        }
+        if (!itemFoundInShoppingList)
+        {
+            print("got wrong item");
+            OnGotWrongItem?.Invoke();
+        }
+
+        OnPocket?.Invoke();
+
+        heldItem.transform.parent = shoppingCartStorage;
+        heldItem.SetActive(false);
+        heldItem = null;
+    }
+    void Smash()
+    {
+        if (heldItem == null) return;
+
+        print("smashed item");
+        OnSmash?.Invoke();
+
+        heldItem.transform.parent = shoppingCartStorage;
+        heldItem.SetActive(false);
+        heldItem = null;
+    }
     void Spin()
     {
         if (heldItem == null) return;

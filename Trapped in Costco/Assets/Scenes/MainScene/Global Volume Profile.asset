@@ -115,7 +115,7 @@ MonoBehaviour:
     max: 4096
   targetRasterizationResolutionHeight:
     m_OverrideState: 1
-    m_Value: 224
+    m_Value: 256
     min: 1
     max: 4096
   isDepthBufferEnabled:
@@ -165,7 +165,7 @@ MonoBehaviour:
     max: 1
   imageSharpness:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 0.403
     min: 0
     max: 1
   bloomSharpnessX:
@@ -180,7 +180,7 @@ MonoBehaviour:
     max: 1
   noiseIntensity:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 0.053
     min: 0
     max: 1
   noiseSaturation:
@@ -190,7 +190,7 @@ MonoBehaviour:
     max: 1
   grateMaskIntensityMin:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.568
     min: 0
     max: 1
   grateMaskIntensityMax:
