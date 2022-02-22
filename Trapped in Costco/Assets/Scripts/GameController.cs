@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController staticReference;
+
     public enum GameState { PLAYING, STARTMENU, PAUSEMENU, WINMENU };
     public GameState gameState = GameState.STARTMENU;
 
@@ -50,6 +52,16 @@ public class GameController : MonoBehaviour
     [SerializeField] Animator[] shoppingListAnimators;
     [SerializeField] Transform shoppingCartStorage;
 
+    [SerializeField] GameObject blockadePrefab;
+    int numBlockades = 1;
+    bool[] blockedLocations;
+    [SerializeField] GameObject freeSamplePrefab;
+    int numFreeSamples = 1;
+    bool[] freeSampleLocations;
+    int buttonMashesToEscapeFreeSamples = 7;
+    bool[] curBlockedDirections = { false, false, false, false }; // up, right, down, left
+
+
     public Action OnGameStart;
     public Action OnGamePause;
     public Action OnGameUnpause;
@@ -78,6 +90,11 @@ public class GameController : MonoBehaviour
     public Action OnGotWrongItem;
 
     #region Setup
+    private void Awake()
+    {
+        staticReference = this;
+    }
+
     private void Start()
     {
         curSpinSpeed = baseSpinSpeed;
@@ -396,4 +413,10 @@ public class GameController : MonoBehaviour
     void Clap() { }
     void ThumbsUp() { }
     void Angry() { }
+
+    public void ClearBlockade()
+    {
+        for (int d = 0; d < curBlockedDirections.Length; d++)
+            curBlockedDirections[d] = false;
+    }
 }

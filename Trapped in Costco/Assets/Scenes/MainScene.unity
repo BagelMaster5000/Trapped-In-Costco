@@ -2309,7 +2309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1751534013467735792, guid: 017ee854838ee8b4f86f39c21814b5c6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 017ee854838ee8b4f86f39c21814b5c6, type: 3}
@@ -2803,6 +2803,8 @@ MonoBehaviour:
   - {fileID: 1261981307}
   shoppingListAnimators: []
   shoppingCartStorage: {fileID: 0}
+  blockadePrefab: {fileID: 0}
+  freeSamplePrefab: {fileID: 0}
 --- !u!1 &2044150113
 GameObject:
   m_ObjectHideFlags: 0
@@ -3156,3 +3158,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 713.1639, y: 535.589, z: 47.59704}
   m_Center: {x: 0, y: 23.91904, z: 50}
+--- !u!1001 &1316185943586363163
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 763627895891226936, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 763627895891226936, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763627895891226936, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763627895891226936, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763627895891226936, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 763627895891226936, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763627895891226936, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763627895891226936, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763627895891226936, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763627895891226936, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763627895891226936, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157013435343882813, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
+      propertyPath: m_Name
+      value: Employee Blockade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203353058488358992, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
