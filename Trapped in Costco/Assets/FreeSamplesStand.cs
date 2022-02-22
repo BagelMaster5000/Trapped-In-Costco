@@ -1,14 +1,13 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class EmployeeBlockade : MonoBehaviour
+public class FreeSamplesStand : MonoBehaviour
 {
-    [SerializeField] string[] allEmployeeLines;
-    [SerializeField] TextMeshProUGUI employeeDialogText;
+    [SerializeField] string[] allFreeSampleLines;
+    [SerializeField] TextMeshProUGUI freeSampleDialogText;
 
-    [SerializeField] Sprite[] allEmployeeGraphics;
-    [SerializeField] SpriteRenderer employeeSpriteRenderer;
+    [SerializeField] Sprite[] allFreeSampleGraphics;
+    [SerializeField] SpriteRenderer freeSampleSpriteRenderer;
 
     BoxCollider blockingCollider;
     Animator animator;
@@ -21,8 +20,8 @@ public class EmployeeBlockade : MonoBehaviour
 
     private void Start()
     {
-        employeeDialogText.text = allEmployeeLines[Random.Range(0, allEmployeeLines.Length)];
-        employeeSpriteRenderer.sprite = allEmployeeGraphics[Random.Range(0, allEmployeeGraphics.Length)];
+        freeSampleDialogText.text = allFreeSampleLines[Random.Range(0, allFreeSampleLines.Length)];
+        freeSampleSpriteRenderer.sprite = allFreeSampleGraphics[Random.Range(0, allFreeSampleGraphics.Length)];
     }
 
     private void OnTriggerEnter(Collider other)
