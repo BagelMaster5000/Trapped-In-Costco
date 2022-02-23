@@ -16,12 +16,16 @@ public class GameController : MonoBehaviour
     [Header("Controls")]
     [SerializeField] InputAction movementInput;
     [SerializeField] InputAction clickInput;
+
     [SerializeField] InputAction spinInput;
     [SerializeField] InputAction pocketInput;
     [SerializeField] InputAction smashInput;
+
     [SerializeField] InputAction clapInput;
     [SerializeField] InputAction thumbsUpInput;
     [SerializeField] InputAction angryInput;
+
+    [SerializeField] InputAction pauseInput;
 
     Timer timer;
 
@@ -122,12 +126,14 @@ public class GameController : MonoBehaviour
         movementInput.Enable();
         clickInput.performed += ctx => ClickInputRecieved();
         clickInput.Enable();
+
         spinInput.performed += ctx => Spin();
         spinInput.Enable();
         pocketInput.performed += ctx => Pocket();
         pocketInput.Enable();
         smashInput.performed += ctx => Smash();
         smashInput.Enable();
+
         clapInput.performed += ctx => Clap();
         clapInput.Enable();
         thumbsUpInput.performed += ctx => ThumbsUp();
@@ -135,14 +141,25 @@ public class GameController : MonoBehaviour
         angryInput.performed += ctx => Angry();
         angryInput.Enable();
 
+        pauseInput.performed += ctx =>
+        {
+            if (gameState == GameState.PAUSEMENU)
+                SetPauseGame(false);
+            else if (gameState == GameState.PLAYING)
+                SetPauseGame(true);
+        };
+        pauseInput.Enable();
+
         OnGamePause = () =>
         {
             movementInput.Disable();
             clickInput.Disable();
+
             spinInput.Disable();
             spinInput.Disable();
             pocketInput.Disable();
             smashInput.Disable();
+
             clapInput.Disable();
             thumbsUpInput.Disable();
             angryInput.Disable();
@@ -151,10 +168,12 @@ public class GameController : MonoBehaviour
         {
             movementInput.Enable();
             clickInput.Enable();
+
             spinInput.Enable();
             spinInput.Enable();
             pocketInput.Enable();
             smashInput.Enable();
+
             clapInput.Enable();
             thumbsUpInput.Enable();
             angryInput.Enable();
@@ -263,8 +282,27 @@ public class GameController : MonoBehaviour
     }
     #endregion
 
-    public void StartGame() { } // Sets game state to playing
-    public void SetPauseGame(bool setPause) { } // Sets game state to either playing or paused
+    public void StartGame()
+    {
+        gameState = GameState.PLAYING;
+
+        OnGameStart?.Invoke();
+    }
+    public void SetPauseGame(bool setPause)
+    {
+        if (setPause)
+        {
+            gameState = GameState.PAUSEMENU;
+
+            OnGamePause?.Invoke();
+        }
+        else
+        {
+            gameState = GameState.PLAYING;
+
+            OnGameUnpause?.Invoke();
+        }
+    }
     public void RestartGame() { }
     public void ExitGame() { }
 

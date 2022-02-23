@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField] bool initialVisibility = false;
     bool visible = true;
 
     [Header("Animation Properties")]
@@ -12,9 +13,13 @@ public class Menu : MonoBehaviour
     Coroutine AppearAnimationCoroutine;
     Coroutine DisappearAnimationCoroutine;
 
-    private void Start()
+    public virtual void Start()
     {
         animationInY = transform.position.y;
+
+        visible = initialVisibility;
+        if (!visible)
+            transform.position = new Vector3(transform.position.x, animationOutY, transform.position.z);
     }
 
     public bool GetIsVisible() { return visible; }
