@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    GameController gameController;
     float curTime = 0;
 
     [SerializeField] TextMeshProUGUI timerText;
     float timerTextRefreshInterval = 0.05f;
 
-    private void Awake()
-    {
-        gameController = GetComponentInParent<GameController>();
-    }
     void Start()
     {
         StartCoroutine(RefreshTimerTextLoop());
@@ -21,7 +16,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (gameController.gameState == GameController.GameState.PLAYING)
+        if (GameController.staticReference.gameState == GameController.GameState.PLAYING)
         {
             curTime += Time.deltaTime;
         }

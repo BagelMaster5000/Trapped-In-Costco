@@ -108,8 +108,9 @@ public class GameController : MonoBehaviour
 
         ShoppingListSetup();
 
+        StartCoroutine(ContinuousItemLerpingAndRotation());
         ItemsInLocationFoldersSetup();
-        RefreshItemsAtLocation();
+        RefreshItemsAtCurrentLocation();
 
         BlockadesSetup();
         FreeSamplesSetup();
@@ -267,34 +268,6 @@ public class GameController : MonoBehaviour
     public void RestartGame() { }
     public void ExitGame() { }
 
-    private void FixedUpdate()
-    {
-        if (heldItem != null)
-        {
-            SmoothMoveItemCloseToCamera();
-            IdleItemRotation();
-        }
-    }
-    private void SmoothMoveItemCloseToCamera()
-    {
-        heldItem.transform.localPosition /= 1.2f;
-        heldItem.transform.rotation = Quaternion.Lerp(heldItem.transform.rotation, Quaternion.Euler(0f, heldItem.transform.eulerAngles.y, 0f), 0.1f);
-    }
-    private void IdleItemRotation()
-    {
-        heldItem.transform.RotateAround(heldItem.transform.position, Vector3.up, curSpinSpeed);
-        if (curSpinSpeed > baseSpinSpeed)
-        {
-            curSpinSpeed = Mathf.Lerp(curSpinSpeed, baseSpinSpeed, 1 / spinSpeedStabilizationFactor);
-            if (curSpinSpeed < baseSpinSpeed + 0.1f) curSpinSpeed = baseSpinSpeed;
-        }
-    }
-
-    /* Sets item texts in shopping list
-     * Plays check animations for shopping list items that were found between now and the last refresh
-     */
-    void RefreshShoppingList() { }
-
     #region Movement
     void MoveInputRecieved(Vector2 input)
     {
@@ -367,13 +340,16 @@ public class GameController : MonoBehaviour
     }
     #endregion
 
+    #region Arriving at Location
     void ArriveAtLocation(Location previousLocation)
     {
         DestroyObstaclesFromPreviousLocation(previousLocation);
         RefreshBlockedDirections(previousLocation);
 
         background.sprite = currentLocation.background;
-        RefreshItemsAtLocation();
+        RefreshItemsAtCurrentLocation();
+
+        NewLocationQuip();
 
         OnArrivedAtLocation?.Invoke(currentLocation);
     }
@@ -421,7 +397,7 @@ public class GameController : MonoBehaviour
             curBlockedDirections[d] = false;
     }
 
-    void RefreshItemsAtLocation()
+    void RefreshItemsAtCurrentLocation()
     {
         for (int l = 0; l < allLocations.Length; l++)
         {
@@ -429,7 +405,18 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void NewLocationQuip()
+    {
+        if (currentLocation.allQuips.Length > 0 && UnityEngine.Random.Range(0.0f, 1.0f) < currentLocation.quipChance)
+        {
+            string randomQuip = currentLocation.allQuips[UnityEngine.Random.Range(0, currentLocation.allQuips.Length)];
+            OnQuip?.Invoke(randomQuip);
+        }
+    }
+    #endregion
 
+
+    #region Shopping List
     void RefreshShoppingListTexts()
     {
         for (int t = 0; t < shoppingListTexts.Length; t++)
@@ -443,8 +430,42 @@ public class GameController : MonoBehaviour
                 shoppingListTexts[t].text = "";
         }
     }
-    void ShoppingListItemFound() { } // Play check animation
+    void PlayShoppingListItemCheckAnimation() { } // Play check animation
+    #endregion
 
+
+    #region Item
+    IEnumerator ContinuousItemLerpingAndRotation()
+    {
+        while (gameState != GameState.WINMENU)
+        {
+            if (heldItem != null)
+            {
+                SmoothMoveItemCloseToCamera();
+                IdleItemRotation();
+            }
+
+            yield return new WaitForFixedUpdate();
+        }
+    }
+    private void SmoothMoveItemCloseToCamera()
+    {
+        heldItem.transform.localPosition /= 1.2f;
+        heldItem.transform.rotation = Quaternion.Lerp(heldItem.transform.rotation, Quaternion.Euler(0f, heldItem.transform.eulerAngles.y, 0f), 0.1f);
+    }
+    private void IdleItemRotation()
+    {
+        heldItem.transform.RotateAround(heldItem.transform.position, Vector3.up, curSpinSpeed);
+
+        if (curSpinSpeed > baseSpinSpeed)
+        {
+            curSpinSpeed = Mathf.Lerp(curSpinSpeed, baseSpinSpeed, 1 / spinSpeedStabilizationFactor);
+            if (curSpinSpeed < baseSpinSpeed + 0.1f)
+            {
+                curSpinSpeed = baseSpinSpeed;
+            }
+        }
+    }
 
     void ClickInputRecieved()
     {
@@ -538,8 +559,11 @@ public class GameController : MonoBehaviour
 
         curSpinSpeed = maxSpinSpeed;
     }
+    #endregion
 
+    #region Emotes
     void Clap() { }
     void ThumbsUp() { }
     void Angry() { }
+    #endregion
 }

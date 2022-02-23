@@ -22,5 +22,6 @@ public class Location : ScriptableObject
     public ItemSpawnLoc[] itemsToSpawn;
 
     [Header("Quips")]
+    public float quipChance = 0.5f;
     public string[] allQuips;
 }

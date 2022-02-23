@@ -25,4 +25,6 @@ MonoBehaviour:
     spawnLoc: {x: -51, y: -1}
   - item: {fileID: 11400000, guid: 5283f782236799248b1e16446d98aedb, type: 2}
     spawnLoc: {x: 4.6, y: -6.2}
-  allQuips: []
+  allQuips:
+  - "Can\u2019t slow down. Butchers might get me. "
+  - 'I need buns.  Lots of buns. '

@@ -107,7 +107,7 @@ MonoBehaviour:
     min: 1
   aspectMode:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 0
   targetRasterizationResolutionWidth:
     m_OverrideState: 1
     m_Value: 256
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   isEnabled:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   bloom:
     m_OverrideState: 1
     m_Value: 0

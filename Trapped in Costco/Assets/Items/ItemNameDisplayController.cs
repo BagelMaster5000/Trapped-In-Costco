@@ -3,12 +3,10 @@ using UnityEngine;
 
 public class ItemNameDisplayController : MonoBehaviour
 {
-    GameController gameController;
     TextMeshProUGUI itemText;
 
     void Awake()
     {
-        gameController = FindObjectOfType<GameController>();
         itemText = GetComponent<TextMeshProUGUI>();
     }
 
@@ -16,10 +14,10 @@ public class ItemNameDisplayController : MonoBehaviour
     {
         HideItemName();
 
-        gameController.OnPickup += DisplayItemName;
-        gameController.OnThrow += HideItemName;
-        gameController.OnPocket += HideItemName;
-        gameController.OnSmash += HideItemName;
+        GameController.staticReference.OnPickup += DisplayItemName;
+        GameController.staticReference.OnThrow += HideItemName;
+        GameController.staticReference.OnPocket += HideItemName;
+        GameController.staticReference.OnSmash += HideItemName;
     }
 
     void DisplayItemName(GameObject dummy, string displayItemName) { itemText.text = displayItemName; }
