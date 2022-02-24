@@ -212,9 +212,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 4320
-        width: 1280
-        height: 720
+        y: 1080
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,10 +232,10 @@ TextureImporter:
       name: Angry Sprite Sheet_1
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 4320
-        width: 1280
-        height: 720
+        x: 320
+        y: 1080
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,10 +253,10 @@ TextureImporter:
       name: Angry Sprite Sheet_2
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 4320
-        width: 1280
-        height: 720
+        x: 640
+        y: 1080
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,10 +274,10 @@ TextureImporter:
       name: Angry Sprite Sheet_3
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 4320
-        width: 1280
-        height: 720
+        x: 960
+        y: 1080
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,10 +295,10 @@ TextureImporter:
       name: Angry Sprite Sheet_4
       rect:
         serializedVersion: 2
-        x: 5120
-        y: 4320
-        width: 1280
-        height: 720
+        x: 1280
+        y: 1080
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,9 +317,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 3600
-        width: 1280
-        height: 720
+        y: 900
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,10 +337,10 @@ TextureImporter:
       name: Angry Sprite Sheet_6
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 3600
-        width: 1280
-        height: 720
+        x: 320
+        y: 900
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,10 +358,10 @@ TextureImporter:
       name: Angry Sprite Sheet_7
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 3600
-        width: 1280
-        height: 720
+        x: 640
+        y: 900
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -379,10 +379,10 @@ TextureImporter:
       name: Angry Sprite Sheet_8
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 3600
-        width: 1280
-        height: 720
+        x: 960
+        y: 900
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -400,10 +400,10 @@ TextureImporter:
       name: Angry Sprite Sheet_9
       rect:
         serializedVersion: 2
-        x: 5120
-        y: 3600
-        width: 1280
-        height: 720
+        x: 1280
+        y: 900
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -422,9 +422,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2880
-        width: 1280
-        height: 720
+        y: 720
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -442,10 +442,10 @@ TextureImporter:
       name: Angry Sprite Sheet_11
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 2880
-        width: 1280
-        height: 720
+        x: 320
+        y: 720
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -463,10 +463,10 @@ TextureImporter:
       name: Angry Sprite Sheet_12
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 2880
-        width: 1280
-        height: 720
+        x: 640
+        y: 720
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -484,10 +484,10 @@ TextureImporter:
       name: Angry Sprite Sheet_13
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 2880
-        width: 1280
-        height: 720
+        x: 960
+        y: 720
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -505,10 +505,10 @@ TextureImporter:
       name: Angry Sprite Sheet_14
       rect:
         serializedVersion: 2
-        x: 5120
-        y: 2880
-        width: 1280
-        height: 720
+        x: 1280
+        y: 720
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -527,9 +527,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2160
-        width: 1280
-        height: 720
+        y: 540
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -547,10 +547,10 @@ TextureImporter:
       name: Angry Sprite Sheet_16
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 2160
-        width: 1280
-        height: 720
+        x: 320
+        y: 540
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -568,10 +568,10 @@ TextureImporter:
       name: Angry Sprite Sheet_17
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 2160
-        width: 1280
-        height: 720
+        x: 640
+        y: 540
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -589,10 +589,10 @@ TextureImporter:
       name: Angry Sprite Sheet_18
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 2160
-        width: 1280
-        height: 720
+        x: 960
+        y: 540
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -610,10 +610,10 @@ TextureImporter:
       name: Angry Sprite Sheet_19
       rect:
         serializedVersion: 2
-        x: 5120
-        y: 2160
-        width: 1280
-        height: 720
+        x: 1280
+        y: 540
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -632,9 +632,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1440
-        width: 1280
-        height: 720
+        y: 360
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -652,10 +652,10 @@ TextureImporter:
       name: Angry Sprite Sheet_21
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1440
-        width: 1280
-        height: 720
+        x: 320
+        y: 360
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -673,10 +673,10 @@ TextureImporter:
       name: Angry Sprite Sheet_22
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 1440
-        width: 1280
-        height: 720
+        x: 640
+        y: 360
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -694,10 +694,10 @@ TextureImporter:
       name: Angry Sprite Sheet_23
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 1440
-        width: 1280
-        height: 720
+        x: 960
+        y: 360
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -715,10 +715,10 @@ TextureImporter:
       name: Angry Sprite Sheet_24
       rect:
         serializedVersion: 2
-        x: 5120
-        y: 1440
-        width: 1280
-        height: 720
+        x: 1280
+        y: 360
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -737,9 +737,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 720
-        width: 1280
-        height: 720
+        y: 180
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -757,10 +757,10 @@ TextureImporter:
       name: Angry Sprite Sheet_26
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 720
-        width: 1280
-        height: 720
+        x: 320
+        y: 180
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -778,10 +778,10 @@ TextureImporter:
       name: Angry Sprite Sheet_27
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 720
-        width: 1280
-        height: 720
+        x: 640
+        y: 180
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -799,10 +799,10 @@ TextureImporter:
       name: Angry Sprite Sheet_28
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 720
-        width: 1280
-        height: 720
+        x: 960
+        y: 180
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -820,10 +820,10 @@ TextureImporter:
       name: Angry Sprite Sheet_29
       rect:
         serializedVersion: 2
-        x: 5120
-        y: 720
-        width: 1280
-        height: 720
+        x: 1280
+        y: 180
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -843,8 +843,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1280
-        height: 720
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -862,10 +862,10 @@ TextureImporter:
       name: Angry Sprite Sheet_31
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 320
         y: 0
-        width: 1280
-        height: 720
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -883,10 +883,10 @@ TextureImporter:
       name: Angry Sprite Sheet_32
       rect:
         serializedVersion: 2
-        x: 2560
+        x: 640
         y: 0
-        width: 1280
-        height: 720
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -904,10 +904,10 @@ TextureImporter:
       name: Angry Sprite Sheet_33
       rect:
         serializedVersion: 2
-        x: 3840
+        x: 960
         y: 0
-        width: 1280
-        height: 720
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -925,10 +925,10 @@ TextureImporter:
       name: Angry Sprite Sheet_34
       rect:
         serializedVersion: 2
-        x: 5120
+        x: 1280
         y: 0
-        width: 1280
-        height: 720
+        width: 320
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
