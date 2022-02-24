@@ -596,12 +596,14 @@ public class GameController : MonoBehaviour
         if (heldItem == null) return;
 
         curSpinSpeed = maxSpinSpeed;
+
+        OnSpin?.Invoke();
     }
     #endregion
 
     #region Emotes
-    void Clap() { }
-    void ThumbsUp() { }
-    void Angry() { }
+    void Clap() { if (heldItem == null) OnClap?.Invoke(); }
+    void ThumbsUp() { if (heldItem == null) OnThumbsUp?.Invoke(); }
+    void Angry() { if (heldItem == null) OnAngry?.Invoke(); }
     #endregion
 }

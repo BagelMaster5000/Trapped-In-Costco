@@ -1,0 +1,9 @@
+Throw animation, hands end upside down (transitions badly to idle)
+Also smash animation, hands end upside down
+
+Thumbs up animation clips top of screen
+
+No pocket animation
+
++ Grab animation is perfect!
++ Spin animation is also really good, just flipped so maybe re-do? Not sure how to improve it...
