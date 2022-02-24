@@ -86,7 +86,7 @@ public class GameController : MonoBehaviour
     public Action OnMoveDown;
     public Action OnMoveLeft;
 
-    public Action<GameObject, string> OnPickup;
+    public Action<string> OnPickup;
     public Action OnThrow;
     public Action OnPocket;
     public Action OnSmash;
@@ -526,10 +526,10 @@ public class GameController : MonoBehaviour
             heldItem.GetComponent<Rigidbody>().velocity = Vector3.zero;
             hit.transform.parent = itemHoldLoc;
 
-            OnPickup?.Invoke(heldItem, heldItem.name);
+            OnPickup?.Invoke(heldItem.name);
         }
         else
-            OnPickup?.Invoke(null, "");
+            OnPickup?.Invoke("");
     }
     void Throw()
     {

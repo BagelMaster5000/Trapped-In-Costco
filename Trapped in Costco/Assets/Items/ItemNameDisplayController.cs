@@ -20,6 +20,6 @@ public class ItemNameDisplayController : MonoBehaviour
         GameController.staticReference.OnSmash += HideItemName;
     }
 
-    void DisplayItemName(GameObject dummy, string displayItemName) { itemText.text = displayItemName; }
+    void DisplayItemName(string displayItemName) { itemText.text = displayItemName; }
     void HideItemName() { itemText.text = ""; }
 }
