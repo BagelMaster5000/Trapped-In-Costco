@@ -127,19 +127,19 @@ public class GameController : MonoBehaviour
         clickInput.performed += ctx => ClickInputRecieved();
         clickInput.Enable();
 
-        spinInput.performed += ctx => Spin();
-        spinInput.Enable();
-        pocketInput.performed += ctx => Pocket();
-        pocketInput.Enable();
-        smashInput.performed += ctx => Smash();
-        smashInput.Enable();
-
         clapInput.performed += ctx => Clap();
         clapInput.Enable();
         thumbsUpInput.performed += ctx => ThumbsUp();
         thumbsUpInput.Enable();
         angryInput.performed += ctx => Angry();
         angryInput.Enable();
+
+        spinInput.performed += ctx => Spin();
+        spinInput.Enable();
+        pocketInput.performed += ctx => Pocket();
+        pocketInput.Enable();
+        smashInput.performed += ctx => Smash();
+        smashInput.Enable();
 
         pauseInput.performed += ctx =>
         {

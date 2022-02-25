@@ -143,7 +143,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   isEnabled:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   bloom:
     m_OverrideState: 1
     m_Value: 0
@@ -160,17 +160,17 @@ MonoBehaviour:
     m_Value: 1
   scanlineSharpness:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
     min: 0
     max: 1
   imageSharpness:
     m_OverrideState: 1
-    m_Value: 0.403
+    m_Value: 0
     min: 0
     max: 1
   bloomSharpnessX:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.435
     min: 0
     max: 1
   bloomSharpnessY:

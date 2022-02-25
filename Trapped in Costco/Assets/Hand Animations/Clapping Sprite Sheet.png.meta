@@ -236,7 +236,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1440
+        y: 1260
         width: 320
         height: 180
       alignment: 0
@@ -257,7 +257,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 1440
+        y: 1260
         width: 320
         height: 180
       alignment: 0
@@ -278,7 +278,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 1440
+        y: 1260
         width: 320
         height: 180
       alignment: 0
@@ -299,7 +299,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 960
-        y: 1440
+        y: 1260
         width: 320
         height: 180
       alignment: 0
@@ -320,7 +320,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1280
-        y: 1440
+        y: 1260
         width: 320
         height: 180
       alignment: 0
@@ -341,7 +341,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1260
+        y: 1080
         width: 320
         height: 180
       alignment: 0
@@ -362,7 +362,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 1260
+        y: 1080
         width: 320
         height: 180
       alignment: 0
@@ -383,7 +383,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 1260
+        y: 1080
         width: 320
         height: 180
       alignment: 0
@@ -404,7 +404,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 960
-        y: 1260
+        y: 1080
         width: 320
         height: 180
       alignment: 0
@@ -425,7 +425,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1280
-        y: 1260
+        y: 1080
         width: 320
         height: 180
       alignment: 0
@@ -446,7 +446,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1080
+        y: 900
         width: 320
         height: 180
       alignment: 0
@@ -467,7 +467,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 1080
+        y: 900
         width: 320
         height: 180
       alignment: 0
@@ -488,7 +488,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 1080
+        y: 900
         width: 320
         height: 180
       alignment: 0
@@ -509,7 +509,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 960
-        y: 1080
+        y: 900
         width: 320
         height: 180
       alignment: 0
@@ -530,7 +530,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1280
-        y: 1080
+        y: 900
         width: 320
         height: 180
       alignment: 0
@@ -551,7 +551,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 900
+        y: 720
         width: 320
         height: 180
       alignment: 0
@@ -572,7 +572,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 900
+        y: 720
         width: 320
         height: 180
       alignment: 0
@@ -593,7 +593,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 900
+        y: 720
         width: 320
         height: 180
       alignment: 0
@@ -614,7 +614,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 960
-        y: 900
+        y: 720
         width: 320
         height: 180
       alignment: 0
@@ -635,7 +635,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1280
-        y: 900
+        y: 720
         width: 320
         height: 180
       alignment: 0
@@ -656,7 +656,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 720
+        y: 540
         width: 320
         height: 180
       alignment: 0
@@ -677,7 +677,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 720
+        y: 540
         width: 320
         height: 180
       alignment: 0
@@ -698,7 +698,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 720
+        y: 540
         width: 320
         height: 180
       alignment: 0
@@ -719,7 +719,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 960
-        y: 720
+        y: 540
         width: 320
         height: 180
       alignment: 0
@@ -740,7 +740,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1280
-        y: 720
+        y: 540
         width: 320
         height: 180
       alignment: 0
@@ -761,7 +761,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 540
+        y: 360
         width: 320
         height: 180
       alignment: 0
@@ -782,7 +782,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 540
+        y: 360
         width: 320
         height: 180
       alignment: 0
@@ -803,7 +803,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 540
+        y: 360
         width: 320
         height: 180
       alignment: 0
@@ -824,7 +824,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 960
-        y: 540
+        y: 360
         width: 320
         height: 180
       alignment: 0
@@ -845,7 +845,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1280
-        y: 540
+        y: 360
         width: 320
         height: 180
       alignment: 0
@@ -866,7 +866,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 360
+        y: 180
         width: 320
         height: 180
       alignment: 0
@@ -887,7 +887,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 360
+        y: 180
         width: 320
         height: 180
       alignment: 0
@@ -908,7 +908,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 360
+        y: 180
         width: 320
         height: 180
       alignment: 0
@@ -929,7 +929,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 960
-        y: 360
+        y: 180
         width: 320
         height: 180
       alignment: 0
@@ -950,7 +950,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1280
-        y: 360
+        y: 180
         width: 320
         height: 180
       alignment: 0
@@ -971,7 +971,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 180
+        y: 0
         width: 320
         height: 180
       alignment: 0
@@ -992,7 +992,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 180
+        y: 0
         width: 320
         height: 180
       alignment: 0
@@ -1013,7 +1013,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 180
+        y: 0
         width: 320
         height: 180
       alignment: 0
@@ -1034,7 +1034,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 960
-        y: 180
+        y: 0
         width: 320
         height: 180
       alignment: 0
@@ -1055,7 +1055,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1280
-        y: 180
+        y: 0
         width: 320
         height: 180
       alignment: 0
@@ -1067,69 +1067,6 @@ TextureImporter:
       bones: []
       spriteID: 30d76e448d4fcdf80800000000000000
       internalID: -8080314421703443197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Clapping Sprite Sheet_40
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 320
-        height: 180
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0771c966d2eeceec0800000000000000
-      internalID: -3536189728630237328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Clapping Sprite Sheet_41
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 320
-        height: 180
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 482a5ab9897b3efb0800000000000000
-      internalID: -4619646926677761404
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Clapping Sprite Sheet_42
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 320
-        height: 180
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9135af76efd7e60e0800000000000000
-      internalID: -2274742230155898087
       vertices: []
       indices: 
       edges: []
