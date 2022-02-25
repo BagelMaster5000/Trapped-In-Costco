@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    [SerializeField] Transform hands;
+    [SerializeField] Animator handsHolderAnimator;
     [SerializeField] Animator handsAnimator;
 
     private void Start()
@@ -23,10 +23,10 @@ public class AnimationController : MonoBehaviour
         GameController.staticReference.OnThrow += PlayThrow;
     }
 
-    public void PlayMoveUp() { }
-    public void PlayMoveLeft() { }
-    public void PlayMoveDown() { }
-    public void PlayMoveRight() { }
+    public void PlayMoveUp() { handsHolderAnimator.SetTrigger("Up"); }
+    public void PlayMoveRight() { handsHolderAnimator.SetTrigger("Right"); }
+    public void PlayMoveDown() { handsHolderAnimator.SetTrigger("Down"); }
+    public void PlayMoveLeft() { handsHolderAnimator.SetTrigger("Left"); }
 
     public void PlayGrab(string itemName) { if (itemName != "") handsAnimator.SetTrigger("Grab"); }
     public void PlayClap() => handsAnimator.SetTrigger("Clap");

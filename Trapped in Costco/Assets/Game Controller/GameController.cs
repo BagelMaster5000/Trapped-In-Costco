@@ -325,12 +325,28 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if (Time.time < afterFreeSampleKillMovementReenableTime) return;
+        bool movementDisabled = Time.time < afterFreeSampleKillMovementReenableTime;
 
-        if (input.y > 0.8f) MoveUp();
-        else if (input.x > 0.8f) MoveRight();
-        else if (input.y < -0.8f) MoveDown();
-        else if (input.x < -0.8f) MoveLeft();
+        if (input.y > 0.8f)
+        {
+            if (!movementDisabled) { MoveUp(); }
+            else { OnMoveUp?.Invoke(); }
+        }
+        else if (input.x > 0.8f)
+        {
+            if (!movementDisabled) { MoveRight(); }
+            else { OnMoveRight?.Invoke(); }
+        }
+        else if (input.y < -0.8f)
+        {
+            if (!movementDisabled) { MoveDown(); }
+            else { OnMoveDown?.Invoke(); }
+        }
+        else if (input.x < -0.8f)
+        {
+            if (!movementDisabled) { MoveLeft(); }
+            else { OnMoveLeft?.Invoke(); }
+        }
     }
     void MoveUp()
     {
