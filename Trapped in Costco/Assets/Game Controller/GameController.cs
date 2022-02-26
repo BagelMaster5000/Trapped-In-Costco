@@ -560,9 +560,10 @@ public class GameController : MonoBehaviour
             heldItem.GetComponent<Rigidbody>().AddForce(ray.direction * throwForce * spinForceMultiplier, ForceMode.Impulse);
 
             heldItem = null;
+
+            OnThrow?.Invoke();
         }
 
-        OnThrow?.Invoke();
     }
     void Pocket()
     {
