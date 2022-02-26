@@ -65,7 +65,9 @@ public class QuipController : MonoBehaviour
         int quipCharactersDisplayed = 1;
         while (quipCharactersDisplayed <= quip.Length)
         {
-            quipText.text = quip.Substring(0, quipCharactersDisplayed);
+            quipText.text = quip.Substring(0, quipCharactersDisplayed) +
+                "<alpha=100>" +
+                quip.Substring(quipCharactersDisplayed, quip.Length - quipCharactersDisplayed);
 
             yield return new WaitForSeconds(quipLetterDisplayInterval);
             quipCharactersDisplayed++;
