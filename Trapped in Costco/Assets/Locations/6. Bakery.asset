@@ -20,4 +20,9 @@ MonoBehaviour:
   leftLocation: {fileID: 11400000, guid: e1d47e3947a681d459942c916472251a, type: 2}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - 'I need buns.  Lots of buns. '
+  - "I haven\u2019t seen that many carbs since Little Debbie\u2019s party in \u201818. "
+  - "Oof, keeping muffins and cupcakes so close together? Aren\u2019t they natural
+    enemies? "
+  - "It\u2019s amazing how many different ways we can repackage a wheat field. "

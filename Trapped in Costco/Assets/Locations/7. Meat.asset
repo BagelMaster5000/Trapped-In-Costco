@@ -20,4 +20,9 @@ MonoBehaviour:
   leftLocation: {fileID: 11400000, guid: 0cda7d31ec8688248bf11deba205cafd, type: 2}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - "\u201CI would like one entire cow, please.\u201D \u201CI\u2019m sorry, they
+    come in packs of two.\u201D "
+  - "\u201CForget this. I\u2019m raising my own cows\u201D "
+  - "Ooo, there\u2019s a sale on my favorite brand of steak: \u201CAnonyMoos.\u201D "
+  - "\u201CMeh, this stuff is 90% plastic wrap anyway.\u201D "

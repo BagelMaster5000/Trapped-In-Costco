@@ -20,4 +20,9 @@ MonoBehaviour:
   leftLocation: {fileID: 0}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - Ahh, Costco. Where everything is either seven or fourteen dollars, and you can
+    never get fewer than two.
+  - Abandon all hope, all ye who enter here.
+  - This store's User Interface has really improved / taken a turn for the worse.
+  - 'First item on the list: a six-pack of sub-orbital satellites.'

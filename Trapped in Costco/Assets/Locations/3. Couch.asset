@@ -20,4 +20,9 @@ MonoBehaviour:
   leftLocation: {fileID: 11400000, guid: 872a84a7f0ab6fb45ba8d8135dabd359, type: 2}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - 'I wonder if anyone would notice if I moved in. '
+  - 'How do they get that sofa to fit in that little box? '
+  - "This isn\u2019t ikea, right? "
+  - 'Ooof, I hate it when they let all the orphan furniture stare at you with their
+    big sad eyes. '

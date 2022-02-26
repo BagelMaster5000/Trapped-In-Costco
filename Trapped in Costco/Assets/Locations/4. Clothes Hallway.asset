@@ -20,4 +20,11 @@ MonoBehaviour:
   leftLocation: {fileID: 11400000, guid: 872a84a7f0ab6fb45ba8d8135dabd359, type: 2}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - "Costco: for anyone who looked at a pair of slacks and thought, \u201CYes\u2026
+    seven of these.\u201D "
+  - "\u201CThe original Jorts \u2018n\u2019 Jeans.\u201D "
+  - 'Seeing this enormous supply of denim makes me wonder.. Which ones will gain
+    consciousness first? '
+  - "I\u2019d try on some pants but the changing room is just \u201Cgo to the dairy
+    section and face the corner.\u201D "

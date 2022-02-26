@@ -20,4 +20,10 @@ MonoBehaviour:
   leftLocation: {fileID: 11400000, guid: 1871355a88ea0a64a8413e2fd2981256, type: 2}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - "Oh dammit, they don\u2019t do bags here. "
+  - 'Maybe I can carve a wound in my arm to hold the groceries. '
+  - 'The lack of bags encourages making Costco your permanent home. '
+  - "\u201CSelf check-out?\u201D Sounds like a threat. "
+  - 'When nobody else is checking you out, Costco lets you do it yourself. '
+  - 'Wait, I have to pay for all this? '

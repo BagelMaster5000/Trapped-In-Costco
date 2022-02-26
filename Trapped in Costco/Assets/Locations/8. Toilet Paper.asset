@@ -20,4 +20,8 @@ MonoBehaviour:
   leftLocation: {fileID: 11400000, guid: 7a2e1963824368545b74151039d766a6, type: 2}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - "I\u2019m glad this is so close to the dairy section. "
+  - 'Anywhere else, this much toilet paper would be considered a warning. '
+  - 'Costco: friend of doomsday preppers and dysentery sufferers everywhere. '
+  - 'Aisles like this are only fair when you sell laxatives in the doses Costco does. '

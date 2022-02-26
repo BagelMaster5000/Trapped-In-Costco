@@ -20,4 +20,9 @@ MonoBehaviour:
   leftLocation: {fileID: 11400000, guid: 7545a8918c77a6a4e93813af691b8bfc, type: 2}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - "\u201CHello, I would like seven blood pressure monitors, please.\u201D "
+  - "\u201CI\u2019m here to drop off a prescription.  No, just donating.\u201D "
+  - "Don\u2019t look the pharmacist in the eye, or else you\u2019ll be forced to
+    swap places with them. "
+  - "Costco is a pioneer of the One Big Pill\u2122 brand of medicine. "

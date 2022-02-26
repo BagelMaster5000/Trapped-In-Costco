@@ -20,4 +20,8 @@ MonoBehaviour:
   leftLocation: {fileID: 0}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - "I\u2019m so tired of walking\u2026  "
+  - 'I should have gotten the Fast-pass for the Monorail. '
+  - "If only they sold giraffe shoes\u2026 "
+  - 'Careful - archers on the top shelf. '

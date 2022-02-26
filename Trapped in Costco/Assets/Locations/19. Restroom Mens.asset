@@ -20,4 +20,10 @@ MonoBehaviour:
   leftLocation: {fileID: 0}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - "I can\u2019t believe the sink/urinal combo never caught on more. "
+  - 'To save money on mirrors, Costcos builds a whole other Costco on the opposite
+    side of the bathroom wall. '
+  - 'Five urinals can fit 3 strangers, 5 friends, or 15 funny fellas. '
+  - The sink is like an all you can eat buffet for your hands.
+  - "\u201COkay, relax\u2026 don\u2019t make eye contact with the toilets\u2026\u201D "

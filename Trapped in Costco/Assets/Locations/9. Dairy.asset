@@ -20,4 +20,10 @@ MonoBehaviour:
   leftLocation: {fileID: 0}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - 'I should have brought a jacket. And a bucket. '
+  - "Costco\u2019s always pushed the limit of how much milk you can legally sell
+    to one person. "
+  - "\u201CYes. All the cheese.\u201D "
+  - "You\u2019d think Costco would sell cheese by the wheel - but they sell it by
+    the whole car. "

@@ -20,4 +20,8 @@ MonoBehaviour:
   leftLocation: {fileID: 11400000, guid: 4972ead9b4a843641b992886b7b86594, type: 2}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - 'Enough vitamins to choke a vegan. '
+  - "There\u2019s enough fiber and laxatives here to explode a human being. "
+  - 'This must be where Costco size Pharma lives. '
+  - "I refuse to believe drugs in this quantity qualify as \u201Chealthy.\u201D "

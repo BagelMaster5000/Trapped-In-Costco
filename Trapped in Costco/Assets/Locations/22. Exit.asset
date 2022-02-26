@@ -20,4 +20,8 @@ MonoBehaviour:
   leftLocation: {fileID: 11400000, guid: 0423e7f003c6639498ad0c1aa090c35d, type: 2}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - OH GOD HOW DID I ALREADY THROW AWAY MY RECEIPT
+  - This is the best part of Costco.
+  - "I can\u2019t take the cart with me, and no bags\u2026 I hope they have a slingshot. "
+  - "And now, it\u2019s time to answer Costco\u2019s riddles three. "

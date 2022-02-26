@@ -20,4 +20,9 @@ MonoBehaviour:
   leftLocation: {fileID: 0}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - "I don\u2019t want to buy a grandma, even if she is chilled and only $7.49. "
+  - "Legally, Costco is required to identify these as \u201Cgrape-shaped marbles.\u201D "
+  - "Anonymous sacks of nectarines\u2026 Costco sells fruit like you\u2019re paying
+    a ransom with them.  "
+  - 'Day 17: our journey was unexpectedly derailed by a sudden blizzard of papaya. '

@@ -20,4 +20,10 @@ MonoBehaviour:
   leftLocation: {fileID: 0}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - 'What horrors have you witnessed, lonely towel dispenser? '
+  - "You\u2019d think the restrooms would be bigger, given the size of the cheese
+    department. "
+  - 'Even the toilets are costco size, and they have price tags. '
+  - "I hear the toilets are so big that you can share if you\u2019re feeling generous. "
+  - 'Seven doors, all leading to one big toilet. '

@@ -20,4 +20,9 @@ MonoBehaviour:
   leftLocation: {fileID: 11400000, guid: 3534313eb48631448a1fc3c9bc8a922d, type: 2}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - "I wonder what \u201Cnon-optical\u201D sunglasses would be. "
+  - "I don\u2019t think I have enough eyes to be here."
+  - "I\u2019m sure moonglasses are just weak sunglasses. "
+  - 'If wearing sunglasses is cool, wearing seven pairs of sunglasses is 7X cool. '
+  - 'Big sunglasses: when you want to look like the coolest bug on your block. '

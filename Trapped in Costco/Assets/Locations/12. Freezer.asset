@@ -20,4 +20,10 @@ MonoBehaviour:
   leftLocation: {fileID: 11400000, guid: cd813f8be26c95a49ae3e3f337a200e6, type: 2}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - 'Costco truly is the only place to buy a bouquet of flowers, a jacuzzi, an engagement
+    ring, a laptop computer, and a living room. '
+  - "Those look big enough to hide a body\u2026 or five bodies. "
+  - "Ah yes I would love to own a \u201CFree jacuzzi png no watermark transparent.\u201D"
+  - "Remember: ice cream of that size isn\u2019t a present, it\u2019s a lifelong
+    commitment. "

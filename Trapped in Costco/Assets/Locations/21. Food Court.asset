@@ -20,4 +20,11 @@ MonoBehaviour:
   leftLocation: {fileID: 11400000, guid: 7fcafcb654c69cc45831f91731e6f127, type: 2}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - "Rumor is the chicken bake is made of everything they don\u2019t sell from housewares. "
+  - "The price of meat keeps going up, but the price of Costco hotdogs always remains
+    the same\u2026 "
+  - 'People will snap their necks to look at you weird when you order a plain dog. '
+  - "\u201CA green salad!?!?!\u201D They always say. "
+  - "\u201CChicken caesar salad?\u201D  No, I\u2019d like a courageous caesar salad,
+    please. "

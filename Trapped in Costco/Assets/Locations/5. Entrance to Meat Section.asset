@@ -20,4 +20,8 @@ MonoBehaviour:
   leftLocation: {fileID: 11400000, guid: 0bee6d199a5b650409816a444e9eb94c, type: 2}
   itemsToSpawn: []
   quipChance: 0.5
-  allQuips: []
+  allQuips:
+  - "Can\u2019t slow down. Butchers might get me. "
+  - "\u201CComing through! There\u2019s a life at steak!\u201D "
+  - 'The primary meat types: beef, pork, and Kirkland. '
+  - 'Beeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef. '
