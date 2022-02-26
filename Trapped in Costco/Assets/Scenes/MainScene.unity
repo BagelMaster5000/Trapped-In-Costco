@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 265072834}
   - component: {fileID: 265072833}
   - component: {fileID: 265072832}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 454585986}
   - component: {fileID: 454585985}
   - component: {fileID: 454585984}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2016,7 +2016,7 @@ GameObject:
   - component: {fileID: 1268319567}
   - component: {fileID: 1268319566}
   - component: {fileID: 1268319565}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3091,11 +3091,31 @@ MonoBehaviour:
       m_Action: Pause Input
       m_Flags: 0
   background: {fileID: 2112476742}
-  currentLocation: {fileID: 11400000, guid: 88aff6f88a302bc4382fad68d7ad5549, type: 2}
+  currentLocation: {fileID: 11400000, guid: d420e3c4f8f4b50478372c946252d2b3, type: 2}
   allLocations:
-  - {fileID: 11400000, guid: 88aff6f88a302bc4382fad68d7ad5549, type: 2}
-  - {fileID: 11400000, guid: d477967c4c0612d4abed4e134352b59a, type: 2}
-  - {fileID: 11400000, guid: d55c4c458abb8124ea9821096942fe88, type: 2}
+  - {fileID: 11400000, guid: d420e3c4f8f4b50478372c946252d2b3, type: 2}
+  - {fileID: 11400000, guid: 2aa0d692dcd36ce409130a08aab64515, type: 2}
+  - {fileID: 11400000, guid: 872a84a7f0ab6fb45ba8d8135dabd359, type: 2}
+  - {fileID: 11400000, guid: 2e6e4a7cbb408214ca476231b06a2f89, type: 2}
+  - {fileID: 11400000, guid: 7bb74ceb43f54454f9d922837c710aa6, type: 2}
+  - {fileID: 11400000, guid: 0cda7d31ec8688248bf11deba205cafd, type: 2}
+  - {fileID: 11400000, guid: 0bee6d199a5b650409816a444e9eb94c, type: 2}
+  - {fileID: 11400000, guid: e1d47e3947a681d459942c916472251a, type: 2}
+  - {fileID: 11400000, guid: cd813f8be26c95a49ae3e3f337a200e6, type: 2}
+  - {fileID: 11400000, guid: 7a2e1963824368545b74151039d766a6, type: 2}
+  - {fileID: 11400000, guid: 5b3cd9d937a9a004690f5cbaea6ac9af, type: 2}
+  - {fileID: 11400000, guid: f519c9375c07b9149a50ac15a2185a12, type: 2}
+  - {fileID: 11400000, guid: 4972ead9b4a843641b992886b7b86594, type: 2}
+  - {fileID: 11400000, guid: 7545a8918c77a6a4e93813af691b8bfc, type: 2}
+  - {fileID: 11400000, guid: ff806ef560f6ee243b4fc7ef19b91f78, type: 2}
+  - {fileID: 11400000, guid: 1871355a88ea0a64a8413e2fd2981256, type: 2}
+  - {fileID: 11400000, guid: 025cf1ce6c6d79444beef357e873c01f, type: 2}
+  - {fileID: 11400000, guid: 7fcafcb654c69cc45831f91731e6f127, type: 2}
+  - {fileID: 11400000, guid: 3534313eb48631448a1fc3c9bc8a922d, type: 2}
+  - {fileID: 11400000, guid: 89d398bce066dd64b86f249444f70802, type: 2}
+  - {fileID: 11400000, guid: 39ad838ffc178fe4dbe7180f9a2d49e0, type: 2}
+  - {fileID: 11400000, guid: 0423e7f003c6639498ad0c1aa090c35d, type: 2}
+  - {fileID: 11400000, guid: d3733f27895e3c845be6ddf03d519f58, type: 2}
   itemHoldLoc: {fileID: 112098527}
   baseSpinSpeed: 1
   maxSpinSpeed: 25

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd8bf2c969742704c8adfe3b0e2f0d02, type: 3}
+  m_Name: 4. Clothes Hallway
+  m_EditorClassIdentifier: 
+  index: 4
+  background: {fileID: 21300000, guid: 69d7e40bc876e5d42ac3d4462fac0966, type: 3}
+  upLocation: {fileID: 11400000, guid: f519c9375c07b9149a50ac15a2185a12, type: 2}
+  rightLocation: {fileID: 11400000, guid: ff806ef560f6ee243b4fc7ef19b91f78, type: 2}
+  downLocation: {fileID: 0}
+  leftLocation: {fileID: 11400000, guid: 872a84a7f0ab6fb45ba8d8135dabd359, type: 2}
+  itemsToSpawn: []
+  quipChance: 0.5
+  allQuips: []
