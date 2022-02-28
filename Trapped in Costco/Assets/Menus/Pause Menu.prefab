@@ -291,8 +291,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3462581071748508922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -44.7}
+  m_LocalScale: {x: 0.11899, y: 0.11899, z: 0.11899}
   m_Children:
   - {fileID: 3462581072737197532}
   - {fileID: 3462581072131402382}
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialVisibility: 0
-  animationOutY: 60
+  animationOutY: 8
   animationSpeed: 2
 --- !u!1 &3462581072131402383
 GameObject:
