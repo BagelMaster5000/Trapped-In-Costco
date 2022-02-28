@@ -81,10 +81,12 @@ public class GameController : MonoBehaviour
     public Action<Location> OnArrivedAtLocation;
     public Action<string> OnQuip;
 
+    public Action<bool> OnMove;
     public Action OnMoveUp;
     public Action OnMoveRight;
     public Action OnMoveDown;
     public Action OnMoveLeft;
+    public Action OnTryMoveWhileFreeSamples;
 
     public Action<string> OnPickup;
     public Action OnThrow;
@@ -97,6 +99,7 @@ public class GameController : MonoBehaviour
 
     public Action OnGotCorrectItem;
     public Action OnGotWrongItem;
+    public Action OnShoppingListComplete;
 
     public Action OnBlockedByFreeSamples;
     public Action<Location> OnClearedFreeSamples;
@@ -322,6 +325,8 @@ public class GameController : MonoBehaviour
             FreeSamplesStand freeSamplesStand = currentLocationFolder.GetComponentInChildren<FreeSamplesStand>();
             freeSamplesStand.Attacked();
 
+            OnTryMoveWhileFreeSamples?.Invoke();
+
             if (remainingButtonMashes <= 0)
             {
                 OnClearedFreeSamples?.Invoke(currentLocation);
@@ -337,21 +342,29 @@ public class GameController : MonoBehaviour
 
         if (input.y > 0.8f)
         {
+            OnMove?.Invoke(currentLocation.upLocation != null && !curBlockedDirections[0] && !movementDisabled);
+
             if (!movementDisabled) { MoveUp(); }
             else { OnMoveUp?.Invoke(); }
         }
         else if (input.x > 0.8f)
         {
+            OnMove?.Invoke(currentLocation.rightLocation != null && !curBlockedDirections[1] && !movementDisabled);
+
             if (!movementDisabled) { MoveRight(); }
             else { OnMoveRight?.Invoke(); }
         }
         else if (input.y < -0.8f)
         {
+            OnMove?.Invoke(currentLocation.downLocation != null && !curBlockedDirections[2] && !movementDisabled);
+
             if (!movementDisabled) { MoveDown(); }
             else { OnMoveDown?.Invoke(); }
         }
         else if (input.x < -0.8f)
         {
+            OnMove?.Invoke(currentLocation.leftLocation != null && !curBlockedDirections[3] && !movementDisabled);
+
             if (!movementDisabled) { MoveLeft(); }
             else { OnMoveLeft?.Invoke(); }
         }
@@ -494,7 +507,6 @@ public class GameController : MonoBehaviour
                 shoppingListTexts[t].text = "";
         }
     }
-    void PlayShoppingListItemCheckAnimation() { } // Play check animation
     #endregion
 
 
@@ -583,7 +595,16 @@ public class GameController : MonoBehaviour
             {
                 shoppingListCompletion[s] = true;
                 RefreshShoppingListTexts();
-                // TODO Play check animation for collected item
+
+                bool allItemsGot = true;
+                foreach (bool i in shoppingListItems)
+                {
+                    if (!i) allItemsGot = false;
+                }
+                if (allItemsGot)
+                {
+                    OnShoppingListComplete?.Invoke();
+                }
 
                 print("got correct item");
                 OnGotCorrectItem?.Invoke();

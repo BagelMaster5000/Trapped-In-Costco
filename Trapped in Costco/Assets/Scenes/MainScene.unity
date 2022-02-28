@@ -1310,7 +1310,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1848909754}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &440959562
 GameObject:
@@ -1817,6 +1817,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 550698982}
+  - component: {fileID: 550698983}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -1836,8 +1837,57 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1848909754}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &550698983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550698981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535708608d38342449b737c845eb1956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemGrab: []
+  itemPocket:
+  - {fileID: 8300000, guid: 90169f3fc90344043933157006498eef, type: 3}
+  - {fileID: 8300000, guid: 5838b2fe5213844419e4df1a99cc85eb, type: 3}
+  itemSmash:
+  - {fileID: 8300000, guid: a0259256fbf66274c99b4309c15fa097, type: 3}
+  - {fileID: 8300000, guid: aef7224acdee70142bc5f9b34c7cd80b, type: 3}
+  clap:
+  - {fileID: 8300000, guid: a0c38d835cdae044f8a5afd941a0168c, type: 3}
+  - {fileID: 8300000, guid: 57297732c5d1c7e4d8433ef4f8d22972, type: 3}
+  angry:
+  - {fileID: 8300000, guid: 38c6ff0e05e1b154cb58521302a4a0f9, type: 3}
+  - {fileID: 8300000, guid: 9c55948a2088b4344bfc33f3c82d9171, type: 3}
+  - {fileID: 8300000, guid: f8b23f31b7fb46b4086373ac974444a2, type: 3}
+  footsteps:
+  - {fileID: 8300000, guid: f90ba603f5f6b834abfc868472dfd7a7, type: 3}
+  - {fileID: 8300000, guid: 8108455c45fc0204b9cde2bfa30861da, type: 3}
+  - {fileID: 8300000, guid: 881b22963ff54ea449c41f8468516ea7, type: 3}
+  quipGrunt:
+  - {fileID: 8300000, guid: f20aca78abe48a94781f6fa7e49bde11, type: 3}
+  - {fileID: 8300000, guid: b5e2235583d335b4db6cb8e3c39a56d1, type: 3}
+  - {fileID: 8300000, guid: 48bac93ac62bef04cb1aca44a496fb91, type: 3}
+  - {fileID: 8300000, guid: d8fa30da0c43f8041ac6ccf21d2a0f60, type: 3}
+  sampleMunching:
+  - {fileID: 8300000, guid: 3c03f49282910154eb2ebd1526e864c3, type: 3}
+  - {fileID: 8300000, guid: 3134b6c51ccb5104d9432cc2f1955896, type: 3}
+  - {fileID: 8300000, guid: 49b4634576f106246b1ef50d7af88b0c, type: 3}
+  startGame: {fileID: 8300000, guid: cd1ed5df5b0dca346ba632d59e881a1e, type: 3}
+  pauseGame: {fileID: 8300000, guid: ee4304d0a2909a046bfc6c3f58443411, type: 3}
+  unpauseGame: {fileID: 8300000, guid: 8d35049ca431f584c886ba8b494c3c51, type: 3}
+  restartGame: {fileID: 0}
+  gotCorrectItem: {fileID: 8300000, guid: 7ff3e06efbb33e5458658dadcf23dc86, type: 3}
+  gotWrongItem: {fileID: 8300000, guid: bc48e222e0dbbd1499e18a83a2a301ae, type: 3}
+  shoppingListComplete: {fileID: 8300000, guid: 25d34dcc99cebf04db697d555a88950e, type: 3}
+  costcoEscaped: {fileID: 0}
+  music: {fileID: 0}
+  ambience: {fileID: 0}
 --- !u!1 &590550853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,7 +1917,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1848909754}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &590550855
 MonoBehaviour:
@@ -2220,7 +2270,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1848909754}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &905322801
 MonoBehaviour:
@@ -2264,7 +2314,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1848909754}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &919551419
 MonoBehaviour:
@@ -3887,7 +3937,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1848909754}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1439282619
 MonoBehaviour:
@@ -4807,12 +4857,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 440948020}
   - {fileID: 905322800}
   - {fileID: 1439282618}
   - {fileID: 590550854}
   - {fileID: 919551418}
   - {fileID: 550698982}
-  - {fileID: 440948020}
   - {fileID: 1008985975}
   - {fileID: 1881860532}
   - {fileID: 1609148858}
@@ -6692,7 +6742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &6473691996231507306
 Rigidbody:
   m_ObjectHideFlags: 0
