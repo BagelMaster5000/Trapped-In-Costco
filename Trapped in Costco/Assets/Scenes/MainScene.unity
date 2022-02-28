@@ -2735,7 +2735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMenu: {fileID: 1678579637315903766, guid: bc24ab4c9a69fcf408b817e01812ffbc, type: 3}
   PauseMenu: {fileID: 3462581071748508922, guid: 53d3d4c89468fa54e913a413af27649c, type: 3}
-  WinMenu: {fileID: 0}
+  WinMenu: {fileID: 365616881389911550, guid: 47368ae9a052b054cbb03e17cb31aa84, type: 3}
 --- !u!1 &1097699592
 GameObject:
   m_ObjectHideFlags: 0

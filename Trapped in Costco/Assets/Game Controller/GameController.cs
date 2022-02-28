@@ -125,6 +125,10 @@ public class GameController : MonoBehaviour
 
         BlockadesSetup();
         FreeSamplesSetup();
+
+        //for (int s = 0; s < shoppingListCompletion.Length; s++)
+        //    shoppingListCompletion[s] = true;
+        //RefreshShoppingListTexts();
     }
 
     private void InputsSetup()
