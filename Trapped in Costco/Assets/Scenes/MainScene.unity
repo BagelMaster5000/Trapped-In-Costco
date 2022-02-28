@@ -6643,6 +6643,14 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Spin Input
       m_Flags: 0
+    - m_Name: 
+      m_Id: 91d16d56-59d3-4f2a-927c-9b3bb5a4db77
+      m_Path: <Keyboard>/3
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Spin Input
+      m_Flags: 0
   pocketInput:
     m_Name: Pocket Input
     m_Type: 0
