@@ -21,6 +21,11 @@ public class QuipController : MonoBehaviour
     [Space(5)]
     [SerializeField] float quipLetterDisplayInterval = 0.05f;
 
+    [Header("Special Quips")]
+    [SerializeField] string[] tryingToLeaveCostcoEarlyQuips;
+    [SerializeField] string[] blockedByFreeSampleStandQuips;
+    [SerializeField] string[] blockedByMembershipEmployeeQuips;
+
     bool playingAnimation;
 
     Queue<string> quipQueue = new Queue<string>();
@@ -29,6 +34,34 @@ public class QuipController : MonoBehaviour
     {
         GameController.staticReference.OnQuip += AddQuip;
         GameController.staticReference.OnArrivedAtLocation += ClearAllQuips;
+
+        GameController.staticReference.OnTryExitBeforeShoppingListComplete += () =>
+        {
+            if (tryingToLeaveCostcoEarlyQuips.Length > 0)
+            {
+                AddQuip(tryingToLeaveCostcoEarlyQuips[Random.Range(0, tryingToLeaveCostcoEarlyQuips.Length)]);
+
+                TryStartAnimationForNextQuip();
+            }
+        };
+        GameController.staticReference.OnBlockedByFreeSamples += () =>
+        {
+            if (blockedByFreeSampleStandQuips.Length > 0)
+            {
+                AddQuip(blockedByFreeSampleStandQuips[Random.Range(0, blockedByFreeSampleStandQuips.Length)]);
+
+                TryStartAnimationForNextQuip();
+            }
+        };
+        GameController.staticReference.OnBlockedByMembershipEmployee += () =>
+        {
+            if (blockedByMembershipEmployeeQuips.Length > 0)
+            {
+                AddQuip(blockedByMembershipEmployeeQuips[Random.Range(0, blockedByMembershipEmployeeQuips.Length)]);
+
+                TryStartAnimationForNextQuip();
+            }
+        };
     }
 
     private void Start()
@@ -57,6 +90,7 @@ public class QuipController : MonoBehaviour
         {
             while (quipQueue.Count > 1) { quipQueue.Dequeue(); } // Clear old quips to prevent buildup
 
+            StopAllCoroutines();
             StartCoroutine(DisplayQuipAnimation(quipQueue.Dequeue()));
         }
     }
@@ -66,12 +100,11 @@ public class QuipController : MonoBehaviour
         backingGraphic.CrossFadeAlpha(0, 0, true);
         quipText.CrossFadeAlpha(0, 0, true);
 
-
-        playingAnimation = true;
         backingGraphic.CrossFadeAlpha(backingGraphicStartAlpha, quipFadeInTime, false);
         quipText.CrossFadeAlpha(1, quipFadeInTime, false);
 
         yield return new WaitForSeconds(quipStartDelay);
+        playingAnimation = true;
 
         int quipCharactersDisplayed = 1;
         while (quipCharactersDisplayed <= quip.Length)

@@ -27,13 +27,10 @@ public class GameController : MonoBehaviour
 
     [SerializeField] InputAction pauseInput;
 
-    Timer timer;
-
     [Header("Locations")]
     [SerializeField] Image background;
     [SerializeField] Location currentLocation;
     [SerializeField] Location[] allLocations;
-    bool[] visitedLocations;
 
     [Header("Item Holding")]
     [SerializeField] Transform itemHoldLoc;
@@ -54,15 +51,14 @@ public class GameController : MonoBehaviour
     Item[] shoppingListItems;
     bool[] shoppingListCompletion;
     [SerializeField] TextMeshProUGUI[] shoppingListTexts;
-    [SerializeField] Animator[] shoppingListAnimators;
     [SerializeField] Transform shoppingCartStorage;
 
     [Header("Blockades and Free Samples")]
     [SerializeField] GameObject blockadePrefab;
-    int numBlockades = 1;
+    [SerializeField] int numBlockades = 1;
     bool[] blockedLocations;
     [SerializeField] GameObject freeSamplePrefab;
-    int numFreeSamples = 1;
+    [SerializeField] int numFreeSamples = 1;
     bool[] freeSampleLocations;
     int buttonMashesToEscapeFreeSamples = 7;
     int remainingButtonMashes = -1;
@@ -87,6 +83,7 @@ public class GameController : MonoBehaviour
     public Action OnMoveDown;
     public Action OnMoveLeft;
     public Action OnTryMoveWhileFreeSamples;
+    public Action OnTryExitBeforeShoppingListComplete;
 
     public Action<string> OnPickup;
     public Action OnThrow;
@@ -102,6 +99,7 @@ public class GameController : MonoBehaviour
     public Action OnShoppingListComplete;
 
     public Action OnBlockedByFreeSamples;
+    public Action OnBlockedByMembershipEmployee;
     public Action<Location> OnClearedFreeSamples;
 
     #region Setup
@@ -373,6 +371,20 @@ public class GameController : MonoBehaviour
     }
     public void MoveUp()
     {
+        if (currentLocation == allLocations[allLocations.Length - 1])
+        {
+            if (IsShoppingListComplete())
+            {
+                gameState = GameState.WINMENU;
+
+                OnGameWin?.Invoke();
+            }
+            else
+            {
+                OnTryExitBeforeShoppingListComplete?.Invoke();
+            }
+        }
+
         if (currentLocation.upLocation != null && !curBlockedDirections[0])
         {
             Location previousLocation = currentLocation;
@@ -448,6 +460,8 @@ public class GameController : MonoBehaviour
         if (blockedLocations[currentLocation.index]) // Employee checking for membership blocks forward movement
         {
             curBlockedDirections[0] = true;
+
+            OnBlockedByMembershipEmployee?.Invoke();
         }
         else if (freeSampleLocations[currentLocation.index]) // Free sample lady blocks all movement
         {
@@ -514,6 +528,21 @@ public class GameController : MonoBehaviour
             else
                 shoppingListTexts[t].text = "";
         }
+    }
+
+    bool IsShoppingListComplete()
+    {
+        bool allItemsGot = true;
+        foreach (bool s in shoppingListCompletion)
+        {
+            if (!s)
+            {
+                allItemsGot = false;
+                break;
+            }
+        }
+
+        return allItemsGot;
     }
     #endregion
 
@@ -608,12 +637,7 @@ public class GameController : MonoBehaviour
                 shoppingListCompletion[s] = true;
                 RefreshShoppingListTexts();
 
-                bool allItemsGot = true;
-                foreach (bool i in shoppingListItems)
-                {
-                    if (!i) allItemsGot = false;
-                }
-                if (allItemsGot)
+                if (IsShoppingListComplete())
                 {
                     OnShoppingListComplete?.Invoke();
                 }
