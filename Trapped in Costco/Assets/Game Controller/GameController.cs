@@ -422,13 +422,13 @@ public class GameController : MonoBehaviour
     {
         OnArrivedAtLocation?.Invoke(currentLocation);
 
+        NewLocationQuip();
+
         DestroyObstaclesFromPreviousLocation(previousLocation);
         RefreshBlockedDirections(previousLocation);
 
         background.sprite = currentLocation.background;
         RefreshItemsAtCurrentLocation();
-
-        NewLocationQuip();
     }
 
     private void DestroyObstaclesFromPreviousLocation(Location previousLocation)

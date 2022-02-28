@@ -28,6 +28,7 @@ public class QuipController : MonoBehaviour
     private void Awake()
     {
         GameController.staticReference.OnQuip += AddQuip;
+        GameController.staticReference.OnArrivedAtLocation += ClearAllQuips;
     }
 
     private void Start()
@@ -45,10 +46,17 @@ public class QuipController : MonoBehaviour
         TryStartAnimationForNextQuip();
     }
 
+    void ClearAllQuips(Location dummy)
+    {
+        quipQueue.Clear();
+    }
+
     void TryStartAnimationForNextQuip()
     {
         if (quipQueue.Count > 0 && !playingAnimation)
         {
+            while (quipQueue.Count > 1) { quipQueue.Dequeue(); } // Clear old quips to prevent buildup
+
             StartCoroutine(DisplayQuipAnimation(quipQueue.Dequeue()));
         }
     }
