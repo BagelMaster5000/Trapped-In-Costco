@@ -135,7 +135,8 @@ GameObject:
   - component: {fileID: 34918265}
   - component: {fileID: 34918264}
   - component: {fileID: 34918263}
-  m_Layer: 5
+  - component: {fileID: 34918266}
+  m_Layer: 9
   m_Name: Arrow Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,6 +257,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34918261}
   m_CullTransparentMesh: 1
+--- !u!65 &34918266
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34918261}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 43.55, y: 91.69, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &112098526
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +313,8 @@ GameObject:
   - component: {fileID: 137916174}
   - component: {fileID: 137916173}
   - component: {fileID: 137916172}
-  m_Layer: 5
+  - component: {fileID: 137916175}
+  m_Layer: 9
   m_Name: Arrow Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,6 +435,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137916170}
   m_CullTransparentMesh: 1
+--- !u!65 &137916175
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137916170}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 43.55, y: 91.69, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &177001154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,7 +1578,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440959562}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -1681,7 +1709,8 @@ GameObject:
   - component: {fileID: 473299635}
   - component: {fileID: 473299634}
   - component: {fileID: 473299633}
-  m_Layer: 5
+  - component: {fileID: 473299636}
+  m_Layer: 9
   m_Name: Arrow Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1802,6 +1831,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473299631}
   m_CullTransparentMesh: 1
+--- !u!65 &473299636
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473299631}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 43.55, y: 91.69, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &509344617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,7 +2156,7 @@ GameObject:
   - component: {fileID: 559521245}
   - component: {fileID: 559521247}
   - component: {fileID: 559521246}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2233,7 +2275,7 @@ GameObject:
   - component: {fileID: 616251450}
   - component: {fileID: 616251452}
   - component: {fileID: 616251451}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2367,7 +2409,7 @@ GameObject:
   - component: {fileID: 643010507}
   - component: {fileID: 643010509}
   - component: {fileID: 643010508}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2633,7 +2675,7 @@ GameObject:
   - component: {fileID: 743150406}
   - component: {fileID: 743150408}
   - component: {fileID: 743150407}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2977,7 +3019,8 @@ GameObject:
   - component: {fileID: 929020359}
   - component: {fileID: 929020358}
   - component: {fileID: 929020357}
-  m_Layer: 5
+  - component: {fileID: 929020360}
+  m_Layer: 9
   m_Name: Arrow Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3098,6 +3141,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929020355}
   m_CullTransparentMesh: 1
+--- !u!65 &929020360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929020355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 43.55, y: 91.69, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &931726732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3202,7 +3258,7 @@ GameObject:
   - component: {fileID: 953007560}
   - component: {fileID: 953007562}
   - component: {fileID: 953007561}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: W
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3812,7 +3868,7 @@ GameObject:
   - component: {fileID: 1129315056}
   - component: {fileID: 1129315058}
   - component: {fileID: 1129315057}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4992,7 +5048,7 @@ GameObject:
   - component: {fileID: 1370601645}
   - component: {fileID: 1370601647}
   - component: {fileID: 1370601646}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5593,7 +5649,7 @@ GameObject:
   - component: {fileID: 1525097545}
   - component: {fileID: 1525097547}
   - component: {fileID: 1525097546}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
