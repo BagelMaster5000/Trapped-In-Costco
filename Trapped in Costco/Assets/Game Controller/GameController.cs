@@ -318,6 +318,8 @@ public class GameController : MonoBehaviour
     #region Movement
     void MoveInputRecieved(Vector2 input)
     {
+        if (gameState != GameState.PLAYING) return;
+
         if (freeSampleLocations[currentLocation.index])
         {
             remainingButtonMashes--;
@@ -551,6 +553,8 @@ public class GameController : MonoBehaviour
 
     void ClickInputRecieved()
     {
+        if (gameState != GameState.PLAYING) return;
+
         if (heldItem == null)
             Pickup();
         else
@@ -592,6 +596,7 @@ public class GameController : MonoBehaviour
     }
     public void Pocket()
     {
+        if (gameState != GameState.PLAYING) return;
         if (heldItem == null) return;
 
         bool itemFoundInShoppingList = false;
@@ -633,6 +638,7 @@ public class GameController : MonoBehaviour
     }
     public void Smash()
     {
+        if (gameState != GameState.PLAYING) return;
         if (heldItem == null) return;
 
         bool heldItemNeededForShoppingList = false;
@@ -654,6 +660,7 @@ public class GameController : MonoBehaviour
     }
     public void Spin()
     {
+        if (gameState != GameState.PLAYING) return;
         if (heldItem == null) return;
 
         curSpinSpeed = maxSpinSpeed;
@@ -663,8 +670,26 @@ public class GameController : MonoBehaviour
     #endregion
 
     #region Emotes
-    public void Clap() { if (heldItem == null) OnClap?.Invoke(); }
-    public void ThumbsUp() { if (heldItem == null) OnThumbsUp?.Invoke(); }
-    public void Angry() { if (heldItem == null) OnAngry?.Invoke(); }
+    public void Clap()
+    {
+        if (gameState != GameState.PLAYING) return;
+        if (heldItem != null) return;
+
+        OnClap?.Invoke();
+    }
+    public void ThumbsUp()
+    {
+        if (gameState != GameState.PLAYING) return;
+        if (heldItem != null) return;
+
+        OnThumbsUp?.Invoke();
+    }
+    public void Angry()
+    {
+        if (gameState != GameState.PLAYING) return;
+        if (heldItem != null) return;
+
+        OnAngry?.Invoke();
+    }
     #endregion
 }
