@@ -501,7 +501,16 @@ public class GameController : MonoBehaviour
             if (t < numShoppingListItems)
             {
                 shoppingListTexts[t].text = shoppingListItems[t].itemName;
-                shoppingListTexts[t].color = shoppingListCompletion[t] ? Color.green : Color.white;
+                if (shoppingListCompletion[t])
+                {
+                    shoppingListTexts[t].color = Color.grey;
+                    shoppingListTexts[t].fontStyle = FontStyles.Strikethrough;
+                }
+                else
+                {
+                    shoppingListTexts[t].color = Color.white;
+                    shoppingListTexts[t].fontStyle = FontStyles.Normal;
+                }
             }
             else
                 shoppingListTexts[t].text = "";
