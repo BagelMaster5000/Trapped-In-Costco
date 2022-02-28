@@ -443,14 +443,11 @@ public class GameController : MonoBehaviour
     }
     private void RefreshBlockedDirections(Location previousLocation)
     {
-        //if (blockedLocations[currentLocation.index])
-        //{
-        //    curBlockedDirections[0] = previousLocation != currentLocation.upLocation;
-        //    curBlockedDirections[1] = previousLocation != currentLocation.rightLocation;
-        //    curBlockedDirections[2] = previousLocation != currentLocation.downLocation;
-        //    curBlockedDirections[3] = previousLocation != currentLocation.leftLocation;
-        //}
-        if (freeSampleLocations[currentLocation.index])
+        if (blockedLocations[currentLocation.index]) // Employee checking for membership blocks forward movement
+        {
+            curBlockedDirections[0] = true;
+        }
+        else if (freeSampleLocations[currentLocation.index]) // Free sample lady blocks all movement
         {
             remainingButtonMashes = buttonMashesToEscapeFreeSamples;
 
