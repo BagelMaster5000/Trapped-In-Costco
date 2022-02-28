@@ -8,16 +8,16 @@ public class ItemNameDisplayController : MonoBehaviour
     void Awake()
     {
         itemText = GetComponent<TextMeshProUGUI>();
-    }
-
-    private void Start()
-    {
-        HideItemName();
 
         GameController.staticReference.OnPickup += DisplayItemName;
         GameController.staticReference.OnThrow += HideItemName;
         GameController.staticReference.OnPocket += HideItemName;
         GameController.staticReference.OnSmash += HideItemName;
+    }
+
+    private void Start()
+    {
+        HideItemName();
     }
 
     void DisplayItemName(string displayItemName) { itemText.text = displayItemName; }

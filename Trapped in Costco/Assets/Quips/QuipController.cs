@@ -25,13 +25,16 @@ public class QuipController : MonoBehaviour
 
     Queue<string> quipQueue = new Queue<string>();
 
+    private void Awake()
+    {
+        GameController.staticReference.OnQuip += AddQuip;
+    }
+
     private void Start()
     {
         backingGraphicStartAlpha = backingGraphic.color.a;
         backingGraphic.CrossFadeAlpha(0, 0, true);
         quipText.CrossFadeAlpha(0, 0, true);
-
-        GameController.staticReference.OnQuip += AddQuip;
     }
 
 

@@ -6,11 +6,8 @@ public class PhoneVisibilityController : MonoBehaviour
     [SerializeField] Animator phoneAnimator;
     [SerializeField] InputAction phoneToggleInput;
 
-    private void Start()
+    private void Awake()
     {
-        phoneToggleInput.performed += ctx => ToggleVisibility();
-        phoneToggleInput.Enable();
-
         GameController.staticReference.OnGamePause += () =>
         {
             phoneToggleInput.Disable();
@@ -19,6 +16,12 @@ public class PhoneVisibilityController : MonoBehaviour
         {
             phoneToggleInput.Enable();
         };
+    }
+
+    private void Start()
+    {
+        phoneToggleInput.performed += ctx => ToggleVisibility();
+        phoneToggleInput.Enable();
     }
 
     public void ToggleVisibility()

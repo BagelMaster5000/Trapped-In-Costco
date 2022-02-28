@@ -5,7 +5,7 @@ public class AnimationController : MonoBehaviour
     [SerializeField] Animator handsHolderAnimator;
     [SerializeField] Animator handsAnimator;
 
-    private void Start()
+    private void Awake()
     {
         GameController.staticReference.OnMoveUp += PlayMoveUp;
         GameController.staticReference.OnMoveRight += PlayMoveRight;

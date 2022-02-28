@@ -1,10 +1,13 @@
 public class WinMenu : Menu
 {
+    private void Awake()
+    {
+        GameController.staticReference.OnGameWin += Appear;
+    }
+
     public override void Start()
     {
         base.Start();
-
-        GameController.staticReference.OnGameWin += Appear;
     }
 
     public void RestartGame() => GameController.staticReference.RestartGame();

@@ -5,16 +5,18 @@ public class ActionIconVisibilityController : MonoBehaviour
     [SerializeField] GameObject heldItemActionButtons;
     [SerializeField] GameObject noItemActionButtons;
 
-    private void Start()
+    private void Awake()
     {
-        ShowNoItemActionButtons();
-
-
         GameController.staticReference.OnPickup += ShowHeldItemActionButtons;
 
         GameController.staticReference.OnPocket += ShowNoItemActionButtons;
         GameController.staticReference.OnSmash += ShowNoItemActionButtons;
         GameController.staticReference.OnThrow += ShowNoItemActionButtons;
+    }
+
+    private void Start()
+    {
+        ShowNoItemActionButtons();
     }
 
     public void ShowHeldItemActionButtons(string dummy)

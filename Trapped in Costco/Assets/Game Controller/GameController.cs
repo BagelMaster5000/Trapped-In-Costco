@@ -98,6 +98,9 @@ public class GameController : MonoBehaviour
     public Action OnGotCorrectItem;
     public Action OnGotWrongItem;
 
+    public Action OnBlockedByFreeSamples;
+    public Action<Location> OnClearedFreeSamples;
+
     #region Setup
     private void Awake()
     {
@@ -113,6 +116,7 @@ public class GameController : MonoBehaviour
         ShoppingListSetup();
 
         background.sprite = currentLocation.background;
+        OnArrivedAtLocation?.Invoke(currentLocation);
 
         StartCoroutine(ContinuousItemLerpingAndRotation());
         ItemsInLocationFoldersSetup();
@@ -320,6 +324,8 @@ public class GameController : MonoBehaviour
 
             if (remainingButtonMashes <= 0)
             {
+                OnClearedFreeSamples?.Invoke(currentLocation);
+
                 ClearBlockedDirections();
                 freeSamplesStand.Killed();
 
@@ -350,7 +356,7 @@ public class GameController : MonoBehaviour
             else { OnMoveLeft?.Invoke(); }
         }
     }
-    void MoveUp()
+    public void MoveUp()
     {
         if (currentLocation.upLocation != null && !curBlockedDirections[0])
         {
@@ -361,7 +367,7 @@ public class GameController : MonoBehaviour
 
         OnMoveUp?.Invoke();
     }
-    void MoveRight()
+    public void MoveRight()
     {
         if (currentLocation.rightLocation != null && !curBlockedDirections[1])
         {
@@ -372,7 +378,7 @@ public class GameController : MonoBehaviour
 
         OnMoveRight?.Invoke();
     }
-    void MoveDown()
+    public void MoveDown()
     {
         if (currentLocation.downLocation != null && !curBlockedDirections[2])
         {
@@ -383,7 +389,7 @@ public class GameController : MonoBehaviour
 
         OnMoveDown?.Invoke();
     }
-    void MoveLeft()
+    public void MoveLeft()
     {
         if (currentLocation.leftLocation != null && !curBlockedDirections[3])
         {
@@ -399,6 +405,8 @@ public class GameController : MonoBehaviour
     #region Arriving at Location
     void ArriveAtLocation(Location previousLocation)
     {
+        OnArrivedAtLocation?.Invoke(currentLocation);
+
         DestroyObstaclesFromPreviousLocation(previousLocation);
         RefreshBlockedDirections(previousLocation);
 
@@ -406,8 +414,6 @@ public class GameController : MonoBehaviour
         RefreshItemsAtCurrentLocation();
 
         NewLocationQuip();
-
-        OnArrivedAtLocation?.Invoke(currentLocation);
     }
 
     private void DestroyObstaclesFromPreviousLocation(Location previousLocation)
@@ -437,6 +443,8 @@ public class GameController : MonoBehaviour
 
             for (int d = 0; d < curBlockedDirections.Length; d++)
                 curBlockedDirections[d] = true;
+
+            OnBlockedByFreeSamples?.Invoke();
         }
         else
         {

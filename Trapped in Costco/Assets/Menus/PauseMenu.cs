@@ -1,11 +1,14 @@
 public class PauseMenu : Menu
 {
+    private void Awake()
+    {
+        GameController.staticReference.OnGamePause += Appear;
+        GameController.staticReference.OnGameUnpause += Disappear;
+    }
+
     public override void Start()
     {
         base.Start();
-
-        GameController.staticReference.OnGamePause += Appear;
-        GameController.staticReference.OnGameUnpause += Disappear;
     }
 
     public void ContinueGame() => GameController.staticReference.SetPauseGame(false);
