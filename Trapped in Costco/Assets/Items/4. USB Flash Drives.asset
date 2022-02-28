@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1dafb5400a72d044bfffc6e409f0757, type: 3}
   m_Name: 4. USB Flash Drives
   m_EditorClassIdentifier: 
-  itemObject: {fileID: 1751534013467735792, guid: 017ee854838ee8b4f86f39c21814b5c6, type: 3}
+  itemObject: {fileID: 1704287223086672242, guid: a8dedb916afd44048b9e2d7ca66dd64f, type: 3}
   itemName: USB Flash Drives

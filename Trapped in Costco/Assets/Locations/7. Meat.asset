@@ -18,7 +18,11 @@ MonoBehaviour:
   rightLocation: {fileID: 0}
   downLocation: {fileID: 11400000, guid: cd813f8be26c95a49ae3e3f337a200e6, type: 2}
   leftLocation: {fileID: 11400000, guid: 0cda7d31ec8688248bf11deba205cafd, type: 2}
-  itemsToSpawn: []
+  itemsToSpawn:
+  - item: {fileID: 11400000, guid: ef4fef361450d2d448cf0c6722da2d07, type: 2}
+    spawnLoc: {x: -48.9, y: 1.7}
+  - item: {fileID: 11400000, guid: 41977c4877f027447903a68cb8b2994e, type: 2}
+    spawnLoc: {x: -41.4, y: -9.3}
   quipChance: 0.3
   allQuips:
   - "\u201CI would like one entire cow, please.\u201D \u201CI\u2019m sorry, they

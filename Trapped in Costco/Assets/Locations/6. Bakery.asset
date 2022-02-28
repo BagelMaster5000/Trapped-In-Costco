@@ -18,7 +18,9 @@ MonoBehaviour:
   rightLocation: {fileID: 0}
   downLocation: {fileID: 11400000, guid: 0cda7d31ec8688248bf11deba205cafd, type: 2}
   leftLocation: {fileID: 11400000, guid: e1d47e3947a681d459942c916472251a, type: 2}
-  itemsToSpawn: []
+  itemsToSpawn:
+  - item: {fileID: 11400000, guid: 5283f782236799248b1e16446d98aedb, type: 2}
+    spawnLoc: {x: -15.4, y: 3.7}
   quipChance: 0.3
   allQuips:
   - 'I need buns.  Lots of buns. '

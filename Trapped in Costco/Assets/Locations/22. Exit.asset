@@ -18,7 +18,11 @@ MonoBehaviour:
   rightLocation: {fileID: 0}
   downLocation: {fileID: 11400000, guid: 7fcafcb654c69cc45831f91731e6f127, type: 2}
   leftLocation: {fileID: 11400000, guid: 0423e7f003c6639498ad0c1aa090c35d, type: 2}
-  itemsToSpawn: []
+  itemsToSpawn:
+  - item: {fileID: 11400000, guid: 82a639b53e92d38418835b22448ae3e4, type: 2}
+    spawnLoc: {x: -36.5, y: 1.2}
+  - item: {fileID: 11400000, guid: 39d245344cd1980478f82ea406bf5f10, type: 2}
+    spawnLoc: {x: -47.4, y: 0}
   quipChance: 0.3
   allQuips:
   - OH GOD HOW DID I ALREADY THROW AWAY MY RECEIPT

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1dafb5400a72d044bfffc6e409f0757, type: 3}
   m_Name: 16. Long Bagel Sleeve
   m_EditorClassIdentifier: 
-  itemObject: {fileID: 1751534013467735792, guid: 017ee854838ee8b4f86f39c21814b5c6, type: 3}
+  itemObject: {fileID: 2927784190406457872, guid: 265a9981f1df5c744a3b4b35d9c95a79, type: 3}
   itemName: Long Bagel Sleeve

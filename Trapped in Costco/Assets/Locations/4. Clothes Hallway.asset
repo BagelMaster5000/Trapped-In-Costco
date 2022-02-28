@@ -18,7 +18,11 @@ MonoBehaviour:
   rightLocation: {fileID: 11400000, guid: ff806ef560f6ee243b4fc7ef19b91f78, type: 2}
   downLocation: {fileID: 0}
   leftLocation: {fileID: 11400000, guid: 872a84a7f0ab6fb45ba8d8135dabd359, type: 2}
-  itemsToSpawn: []
+  itemsToSpawn:
+  - item: {fileID: 11400000, guid: 4817f37400fc49348bc7a380d328895a, type: 2}
+    spawnLoc: {x: -38, y: -7.5}
+  - item: {fileID: 11400000, guid: 5c9d71379e8c3534d9b32d95f8e32272, type: 2}
+    spawnLoc: {x: 37.2, y: -3.8}
   quipChance: 0.3
   allQuips:
   - "Costco: for anyone who looked at a pair of slacks and thought, \u201CYes\u2026

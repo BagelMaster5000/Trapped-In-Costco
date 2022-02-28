@@ -18,7 +18,9 @@ MonoBehaviour:
   rightLocation: {fileID: 11400000, guid: 7bb74ceb43f54454f9d922837c710aa6, type: 2}
   downLocation: {fileID: 11400000, guid: 2aa0d692dcd36ce409130a08aab64515, type: 2}
   leftLocation: {fileID: 0}
-  itemsToSpawn: []
+  itemsToSpawn:
+  - item: {fileID: 11400000, guid: 850a18632d8e14f48a86b8ef3f6a27ad, type: 2}
+    spawnLoc: {x: -11.8, y: -14.2}
   quipChance: 0.3
   allQuips:
   - "Rumor has it there\u2019s an Alpha-Costco from which all other Costcos come

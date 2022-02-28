@@ -18,7 +18,13 @@ MonoBehaviour:
   rightLocation: {fileID: 0}
   downLocation: {fileID: 11400000, guid: 7a2e1963824368545b74151039d766a6, type: 2}
   leftLocation: {fileID: 0}
-  itemsToSpawn: []
+  itemsToSpawn:
+  - item: {fileID: 11400000, guid: 0a6567e5c5914a54eac1394ab304318a, type: 2}
+    spawnLoc: {x: -26.4, y: 12.4}
+  - item: {fileID: 11400000, guid: f8b0ea20dde078648b1d2b0f9fdbbfb8, type: 2}
+    spawnLoc: {x: 41.2, y: -6.8}
+  - item: {fileID: 11400000, guid: d59e6827441b8cc498fa19825c1f9058, type: 2}
+    spawnLoc: {x: 27.8, y: 10.8}
   quipChance: 0.3
   allQuips:
   - "I don\u2019t want to buy a grandma, even if she is chilled and only $7.49. "

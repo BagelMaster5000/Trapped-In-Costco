@@ -1550,7 +1550,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440959562}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -6747,9 +6747,9 @@ MonoBehaviour:
   - {fileID: 2098991144}
   shoppingCartStorage: {fileID: 440948020}
   blockadePrefab: {fileID: 4157013435343882813, guid: 29c5c2878f8657c479873e0a967d24b8, type: 3}
-  numBlockades: 1
+  numBlockades: 3
   freeSamplePrefab: {fileID: 3180781786333412439, guid: 172f33346182bcd4882a06a8b44186e4, type: 3}
-  numFreeSamples: 1
+  numFreeSamples: 3
 --- !u!1 &1861423574
 GameObject:
   m_ObjectHideFlags: 0
@@ -8378,7 +8378,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c4271d39ed4675e4297c42ee3d27ccac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a8cdc2e3f34f3f4592b157df7d25a32, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8504,7 +8504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &6473691996231507306
 Rigidbody:
   m_ObjectHideFlags: 0

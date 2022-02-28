@@ -18,7 +18,11 @@ MonoBehaviour:
   rightLocation: {fileID: 0}
   downLocation: {fileID: 11400000, guid: 3534313eb48631448a1fc3c9bc8a922d, type: 2}
   leftLocation: {fileID: 0}
-  itemsToSpawn: []
+  itemsToSpawn:
+  - item: {fileID: 11400000, guid: 82a639b53e92d38418835b22448ae3e4, type: 2}
+    spawnLoc: {x: -41.9, y: -6.8}
+  - item: {fileID: 11400000, guid: 0a6567e5c5914a54eac1394ab304318a, type: 2}
+    spawnLoc: {x: 46.9, y: -3.3}
   quipChance: 0.3
   allQuips:
   - "I can\u2019t believe the sink/urinal combo never caught on more. "

@@ -18,7 +18,9 @@ MonoBehaviour:
   rightLocation: {fileID: 11400000, guid: 4972ead9b4a843641b992886b7b86594, type: 2}
   downLocation: {fileID: 0}
   leftLocation: {fileID: 11400000, guid: 0cda7d31ec8688248bf11deba205cafd, type: 2}
-  itemsToSpawn: []
+  itemsToSpawn:
+  - item: {fileID: 11400000, guid: 62b8d89072ad4e64382e9c71431528e8, type: 2}
+    spawnLoc: {x: -43.5, y: 14.9}
   quipChance: 0.3
   allQuips:
   - "I don\u2019t know\u2026 what would I do with seven copies of Superman Returns? "

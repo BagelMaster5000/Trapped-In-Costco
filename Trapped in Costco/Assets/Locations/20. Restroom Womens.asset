@@ -18,7 +18,9 @@ MonoBehaviour:
   rightLocation: {fileID: 0}
   downLocation: {fileID: 11400000, guid: 3534313eb48631448a1fc3c9bc8a922d, type: 2}
   leftLocation: {fileID: 0}
-  itemsToSpawn: []
+  itemsToSpawn:
+  - item: {fileID: 11400000, guid: d59e6827441b8cc498fa19825c1f9058, type: 2}
+    spawnLoc: {x: 2.6, y: -29.2}
   quipChance: 0.3
   allQuips:
   - 'What horrors have you witnessed, lonely towel dispenser? '

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1dafb5400a72d044bfffc6e409f0757, type: 3}
   m_Name: 2. Office Chair
   m_EditorClassIdentifier: 
-  itemObject: {fileID: 1751534013467735792, guid: 017ee854838ee8b4f86f39c21814b5c6, type: 3}
+  itemObject: {fileID: 6571302571186870887, guid: d5dac5bfb86e62d459c0ee80ae9c2358, type: 3}
   itemName: Office Chair

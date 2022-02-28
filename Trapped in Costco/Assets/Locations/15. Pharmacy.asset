@@ -18,7 +18,11 @@ MonoBehaviour:
   rightLocation: {fileID: 0}
   downLocation: {fileID: 11400000, guid: ff806ef560f6ee243b4fc7ef19b91f78, type: 2}
   leftLocation: {fileID: 11400000, guid: 4972ead9b4a843641b992886b7b86594, type: 2}
-  itemsToSpawn: []
+  itemsToSpawn:
+  - item: {fileID: 11400000, guid: 9dd232d637664e949952f85a99ce6a48, type: 2}
+    spawnLoc: {x: -35.8, y: -2.4}
+  - item: {fileID: 11400000, guid: 9dd232d637664e949952f85a99ce6a48, type: 2}
+    spawnLoc: {x: 50.8, y: 9.4}
   quipChance: 0.3
   allQuips:
   - 'Enough vitamins to choke a vegan. '

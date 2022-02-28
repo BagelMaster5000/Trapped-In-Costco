@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1dafb5400a72d044bfffc6e409f0757, type: 3}
   m_Name: 13. Kirkland T-Shirt
   m_EditorClassIdentifier: 
-  itemObject: {fileID: 1751534013467735792, guid: 017ee854838ee8b4f86f39c21814b5c6, type: 3}
+  itemObject: {fileID: 4673186952583031266, guid: cd88e4046de8c044b89544863b11bcbb, type: 3}
   itemName: Kirkland T-Shirt

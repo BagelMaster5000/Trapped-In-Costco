@@ -18,7 +18,13 @@ MonoBehaviour:
   rightLocation: {fileID: 11400000, guid: 2aa0d692dcd36ce409130a08aab64515, type: 2}
   downLocation: {fileID: 0}
   leftLocation: {fileID: 0}
-  itemsToSpawn: []
+  itemsToSpawn:
+  - item: {fileID: 11400000, guid: edfcb002f9bc8854aa54c2a2ed7f0dc1, type: 2}
+    spawnLoc: {x: -19.83, y: -5.8}
+  - item: {fileID: 11400000, guid: 399c8b8a3d16e96429af83c2718a6df9, type: 2}
+    spawnLoc: {x: 29.3, y: -7.1}
+  - item: {fileID: 11400000, guid: 39d245344cd1980478f82ea406bf5f10, type: 2}
+    spawnLoc: {x: 29.3, y: -7.1}
   quipChance: 0.3
   allQuips:
   - Ahh, Costco. Where everything is either seven or fourteen dollars, and you can

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1dafb5400a72d044bfffc6e409f0757, type: 3}
   m_Name: 0. Maxed-Out Laptop
   m_EditorClassIdentifier: 
-  itemObject: {fileID: 1751534013467735792, guid: 017ee854838ee8b4f86f39c21814b5c6, type: 3}
+  itemObject: {fileID: 288788528966811859, guid: 94c1ce1d7fcbd4040b241a4348963a38, type: 3}
   itemName: Maxed-Out Laptop
