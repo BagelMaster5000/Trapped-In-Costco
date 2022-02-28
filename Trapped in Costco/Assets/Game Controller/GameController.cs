@@ -635,7 +635,17 @@ public class GameController : MonoBehaviour
     {
         if (heldItem == null) return;
 
-        print("smashed item");
+        bool heldItemNeededForShoppingList = false;
+        for (int s = 0; s < shoppingListItems.Length; s++)
+        {
+            if (shoppingListItems[s].itemName == heldItem.name && !shoppingListCompletion[s])
+            {
+                heldItemNeededForShoppingList = true;
+                break;
+            }
+        }
+        if (heldItemNeededForShoppingList) return;
+
         OnSmash?.Invoke();
 
         heldItem.transform.parent = shoppingCartStorage;
