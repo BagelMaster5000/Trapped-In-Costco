@@ -582,6 +582,7 @@ public class GameController : MonoBehaviour
 
             float spinForceMultiplier = Mathf.Clamp(curSpinSpeed / baseSpinSpeed, 1, 2);
             heldItem.GetComponent<Rigidbody>().AddForce(ray.direction * throwForce * spinForceMultiplier, ForceMode.Impulse);
+            heldItem.GetComponent<Rigidbody>().AddTorque(Vector3.right * -150 * spinForceMultiplier, ForceMode.Impulse);
 
             heldItem = null;
 
