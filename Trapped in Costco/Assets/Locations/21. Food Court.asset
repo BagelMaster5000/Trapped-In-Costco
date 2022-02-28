@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 0}
   leftLocation: {fileID: 11400000, guid: 7fcafcb654c69cc45831f91731e6f127, type: 2}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - "Rumor is the chicken bake is made of everything they don\u2019t sell from housewares. "
   - "The price of meat keeps going up, but the price of Costco hotdogs always remains

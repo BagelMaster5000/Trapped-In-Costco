@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 11400000, guid: 2e6e4a7cbb408214ca476231b06a2f89, type: 2}
   leftLocation: {fileID: 11400000, guid: d420e3c4f8f4b50478372c946252d2b3, type: 2}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - 'That reminds me, I should probably pick up someone to buy jewelry for. '
   - "Weird, they don\u2019t sell their diamonds in bulk. "

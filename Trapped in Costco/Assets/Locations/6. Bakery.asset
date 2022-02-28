@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 11400000, guid: 0cda7d31ec8688248bf11deba205cafd, type: 2}
   leftLocation: {fileID: 11400000, guid: e1d47e3947a681d459942c916472251a, type: 2}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - 'I need buns.  Lots of buns. '
   - "I haven\u2019t seen that many carbs since Little Debbie\u2019s party in \u201818. "

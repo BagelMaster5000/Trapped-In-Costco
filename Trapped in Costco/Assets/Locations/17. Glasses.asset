@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 11400000, guid: ff806ef560f6ee243b4fc7ef19b91f78, type: 2}
   leftLocation: {fileID: 11400000, guid: 3534313eb48631448a1fc3c9bc8a922d, type: 2}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - "I wonder what \u201Cnon-optical\u201D sunglasses would be. "
   - "I don\u2019t think I have enough eyes to be here."

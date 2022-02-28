@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 11400000, guid: 7a2e1963824368545b74151039d766a6, type: 2}
   leftLocation: {fileID: 0}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - "I don\u2019t want to buy a grandma, even if she is chilled and only $7.49. "
   - "Legally, Costco is required to identify these as \u201Cgrape-shaped marbles.\u201D "

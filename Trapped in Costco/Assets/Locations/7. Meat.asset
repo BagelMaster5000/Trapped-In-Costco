@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 11400000, guid: cd813f8be26c95a49ae3e3f337a200e6, type: 2}
   leftLocation: {fileID: 11400000, guid: 0cda7d31ec8688248bf11deba205cafd, type: 2}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - "\u201CI would like one entire cow, please.\u201D \u201CI\u2019m sorry, they
     come in packs of two.\u201D "

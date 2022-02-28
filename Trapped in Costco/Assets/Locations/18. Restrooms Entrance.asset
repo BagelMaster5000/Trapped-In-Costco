@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 11400000, guid: 7fcafcb654c69cc45831f91731e6f127, type: 2}
   leftLocation: {fileID: 11400000, guid: 39ad838ffc178fe4dbe7180f9a2d49e0, type: 2}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - "I\u2019m scared. I don\u2019t know how to use a three-pack of toilets. "
   - 'A Costco sized bathroom will probably make me self-conscious. And I might fall

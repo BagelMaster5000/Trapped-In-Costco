@@ -19,10 +19,10 @@ MonoBehaviour:
   downLocation: {fileID: 11400000, guid: 2aa0d692dcd36ce409130a08aab64515, type: 2}
   leftLocation: {fileID: 0}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - "Rumor has it there\u2019s an Alpha-Costco from which all other Costcos come
     \u2026 in packs of eight. "
-  - 'I really should have gotten a cart. Or a wheelbarrow./truck '
+  - I really should have gotten a cart. Or a wheelbarrow/truck.
   - "It\u2019s so\u2026 big. "
   - 'You can never tell if an aisle is on sale or under construction. '

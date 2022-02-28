@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 0}
   leftLocation: {fileID: 0}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - 'I should have brought a jacket. And a bucket. '
   - "Costco\u2019s always pushed the limit of how much milk you can legally sell

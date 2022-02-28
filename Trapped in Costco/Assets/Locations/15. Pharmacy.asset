@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 11400000, guid: ff806ef560f6ee243b4fc7ef19b91f78, type: 2}
   leftLocation: {fileID: 11400000, guid: 4972ead9b4a843641b992886b7b86594, type: 2}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - 'Enough vitamins to choke a vegan. '
   - "There\u2019s enough fiber and laxatives here to explode a human being. "

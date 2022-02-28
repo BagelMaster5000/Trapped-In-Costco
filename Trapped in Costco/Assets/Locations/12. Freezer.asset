@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 0}
   leftLocation: {fileID: 11400000, guid: cd813f8be26c95a49ae3e3f337a200e6, type: 2}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - 'Costco truly is the only place to buy a bouquet of flowers, a jacuzzi, an engagement
     ring, a laptop computer, and a living room. '

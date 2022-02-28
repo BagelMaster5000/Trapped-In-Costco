@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 0}
   leftLocation: {fileID: 11400000, guid: 1871355a88ea0a64a8413e2fd2981256, type: 2}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - "Oh dammit, they don\u2019t do bags here. "
   - 'Maybe I can carve a wound in my arm to hold the groceries. '

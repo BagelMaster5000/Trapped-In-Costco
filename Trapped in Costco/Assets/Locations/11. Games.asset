@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 0}
   leftLocation: {fileID: 11400000, guid: 0cda7d31ec8688248bf11deba205cafd, type: 2}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - "I don\u2019t know\u2026 what would I do with seven copies of Superman Returns? "
   - 'The tomato sauce makes the game load faster, I swear. '

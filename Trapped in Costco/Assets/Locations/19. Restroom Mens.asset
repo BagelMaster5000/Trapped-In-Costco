@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 11400000, guid: 3534313eb48631448a1fc3c9bc8a922d, type: 2}
   leftLocation: {fileID: 0}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - "I can\u2019t believe the sink/urinal combo never caught on more. "
   - 'To save money on mirrors, Costcos builds a whole other Costco on the opposite

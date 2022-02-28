@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 11400000, guid: 3534313eb48631448a1fc3c9bc8a922d, type: 2}
   leftLocation: {fileID: 0}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - 'What horrors have you witnessed, lonely towel dispenser? '
   - "You\u2019d think the restrooms would be bigger, given the size of the cheese

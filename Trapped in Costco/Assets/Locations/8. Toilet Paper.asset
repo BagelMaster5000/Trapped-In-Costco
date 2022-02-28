@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 0}
   leftLocation: {fileID: 11400000, guid: 7a2e1963824368545b74151039d766a6, type: 2}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - "I\u2019m glad this is so close to the dairy section. "
   - 'Anywhere else, this much toilet paper would be considered a warning. '

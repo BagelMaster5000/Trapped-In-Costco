@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 11400000, guid: 1871355a88ea0a64a8413e2fd2981256, type: 2}
   leftLocation: {fileID: 11400000, guid: 7545a8918c77a6a4e93813af691b8bfc, type: 2}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - "\u201CHello, I would like seven blood pressure monitors, please.\u201D "
   - "\u201CI\u2019m here to drop off a prescription.  No, just donating.\u201D "

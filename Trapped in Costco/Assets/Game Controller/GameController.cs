@@ -152,7 +152,7 @@ public class GameController : MonoBehaviour
         };
         pauseInput.Enable();
 
-        OnGamePause = () =>
+        OnGamePause += () =>
         {
             movementInput.Disable();
             clickInput.Disable();
@@ -166,7 +166,7 @@ public class GameController : MonoBehaviour
             thumbsUpInput.Disable();
             angryInput.Disable();
         };
-        OnGameUnpause = () =>
+        OnGameUnpause += () =>
         {
             movementInput.Enable();
             clickInput.Enable();
@@ -535,10 +535,8 @@ public class GameController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         //Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100, Color.red, 100);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 500, itemLayer))
+        if (Physics.Raycast(ray, out RaycastHit hit, 500, itemLayer) && hit.transform.CompareTag("CostcoProduct"))
         {
-            if (!hit.transform.CompareTag("CostcoProduct")) return;
-
             heldItem = hit.transform.gameObject;
             heldItem.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             heldItem.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -546,15 +544,13 @@ public class GameController : MonoBehaviour
 
             OnPickup?.Invoke(heldItem.name);
         }
-        else
-            OnPickup?.Invoke("");
     }
     void Throw()
     {
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         //Debug.DrawLine(Camera.main.transform.position, Mouse.current.position.ReadValue(), Color.red);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 500, backgroundLayer))
+        if (Physics.Raycast(ray, out RaycastHit hit, 500, backgroundLayer) && hit.collider.CompareTag("ThrowableSurface"))
         {
             heldItem.transform.parent = itemLocationFolders[currentLocation.index].transform;
 
@@ -567,7 +563,7 @@ public class GameController : MonoBehaviour
         }
 
     }
-    void Pocket()
+    public void Pocket()
     {
         if (heldItem == null) return;
 
@@ -599,7 +595,7 @@ public class GameController : MonoBehaviour
         heldItem.SetActive(false);
         heldItem = null;
     }
-    void Smash()
+    public void Smash()
     {
         if (heldItem == null) return;
 
@@ -610,7 +606,7 @@ public class GameController : MonoBehaviour
         heldItem.SetActive(false);
         heldItem = null;
     }
-    void Spin()
+    public void Spin()
     {
         if (heldItem == null) return;
 
@@ -621,8 +617,8 @@ public class GameController : MonoBehaviour
     #endregion
 
     #region Emotes
-    void Clap() { if (heldItem == null) OnClap?.Invoke(); }
-    void ThumbsUp() { if (heldItem == null) OnThumbsUp?.Invoke(); }
-    void Angry() { if (heldItem == null) OnAngry?.Invoke(); }
+    public void Clap() { if (heldItem == null) OnClap?.Invoke(); }
+    public void ThumbsUp() { if (heldItem == null) OnThumbsUp?.Invoke(); }
+    public void Angry() { if (heldItem == null) OnAngry?.Invoke(); }
     #endregion
 }

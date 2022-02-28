@@ -19,7 +19,7 @@ MonoBehaviour:
   downLocation: {fileID: 11400000, guid: 2aa0d692dcd36ce409130a08aab64515, type: 2}
   leftLocation: {fileID: 11400000, guid: 872a84a7f0ab6fb45ba8d8135dabd359, type: 2}
   itemsToSpawn: []
-  quipChance: 0.5
+  quipChance: 0.3
   allQuips:
   - 'I wonder if anyone would notice if I moved in. '
   - 'How do they get that sofa to fit in that little box? '
