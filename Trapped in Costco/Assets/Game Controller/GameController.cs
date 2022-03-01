@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
@@ -315,8 +316,8 @@ public class GameController : MonoBehaviour
             OnGameUnpause?.Invoke();
         }
     }
-    public void RestartGame() { }
-    public void ExitGame() { }
+    public void RestartGame() { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
+    public void ExitGame() { Application.Quit(); }
 
     #region Movement
     void MoveInputRecieved(Vector2 input)
