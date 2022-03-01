@@ -25,7 +25,7 @@ public class Menu : MonoBehaviour
     public bool GetIsVisible() { return visible; }
 
     [ContextMenu("Appear")]
-    public void Appear()
+    public virtual void Appear()
     {
         if (!visible)
         {

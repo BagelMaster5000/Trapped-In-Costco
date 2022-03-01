@@ -52,6 +52,7 @@ public class GameController : MonoBehaviour
     bool[] shoppingListCompletion;
     [SerializeField] TextMeshProUGUI[] shoppingListTexts;
     [SerializeField] Transform shoppingCartStorage;
+    int numIncorrectItemsAddedToCart = 0;
 
     [Header("Blockades and Free Samples")]
     [SerializeField] GameObject blockadePrefab;
@@ -646,7 +647,6 @@ public class GameController : MonoBehaviour
                     OnShoppingListComplete?.Invoke();
                 }
 
-                print("got correct item");
                 OnGotCorrectItem?.Invoke();
 
                 itemFoundInShoppingList = true;
@@ -654,7 +654,8 @@ public class GameController : MonoBehaviour
         }
         if (!itemFoundInShoppingList)
         {
-            print("got wrong item");
+            numIncorrectItemsAddedToCart++;
+
             OnGotWrongItem?.Invoke();
         }
 
@@ -700,24 +701,26 @@ public class GameController : MonoBehaviour
     #region Emotes
     public void Clap()
     {
-        if (gameState != GameState.PLAYING) return;
         if (heldItem != null) return;
+        if (gameState != GameState.PLAYING) return;
 
         OnClap?.Invoke();
     }
     public void ThumbsUp()
     {
-        if (gameState != GameState.PLAYING) return;
         if (heldItem != null) return;
+        if (gameState != GameState.PLAYING) return;
 
         OnThumbsUp?.Invoke();
     }
     public void Angry()
     {
-        if (gameState != GameState.PLAYING) return;
         if (heldItem != null) return;
+        if (gameState != GameState.PLAYING) return;
 
         OnAngry?.Invoke();
     }
     #endregion
+
+    public int GetNumberOfIncorrectItemsAddedToCart() { return numIncorrectItemsAddedToCart; }
 }
