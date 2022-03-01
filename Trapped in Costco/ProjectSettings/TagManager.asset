@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CostcoProduct
   - ThrowableSurface
+  - ControlText
   layers:
   - Default
   - TransparentFX

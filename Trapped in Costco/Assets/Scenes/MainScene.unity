@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 189166416}
   m_Layer: 5
   m_Name: 2
-  m_TagString: Untagged
+  m_TagString: ControlText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1315,7 +1315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b7cd05d86ec060d499aed09bad683abf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 90f7c00f9ea3a594ca7f8db3572fff67, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2252,7 +2252,7 @@ GameObject:
   - component: {fileID: 559521246}
   m_Layer: 9
   m_Name: A
-  m_TagString: Untagged
+  m_TagString: ControlText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2771,7 +2771,7 @@ GameObject:
   - component: {fileID: 743150407}
   m_Layer: 9
   m_Name: S
-  m_TagString: Untagged
+  m_TagString: ControlText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3354,7 +3354,7 @@ GameObject:
   - component: {fileID: 953007561}
   m_Layer: 9
   m_Name: W
-  m_TagString: Untagged
+  m_TagString: ControlText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3966,7 +3966,7 @@ GameObject:
   - component: {fileID: 1129315057}
   m_Layer: 9
   m_Name: D
-  m_TagString: Untagged
+  m_TagString: ControlText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5280,7 +5280,7 @@ GameObject:
   - component: {fileID: 1435635409}
   m_Layer: 5
   m_Name: 4
-  m_TagString: Untagged
+  m_TagString: ControlText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5968,7 +5968,7 @@ GameObject:
   - component: {fileID: 1707810968}
   m_Layer: 5
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: ControlText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6044,7 +6044,7 @@ GameObject:
   - component: {fileID: 1727721417}
   m_Layer: 9
   m_Name: Above Text
-  m_TagString: Untagged
+  m_TagString: ControlText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6253,7 +6253,7 @@ GameObject:
   - component: {fileID: 1789412460}
   m_Layer: 5
   m_Name: 3
-  m_TagString: Untagged
+  m_TagString: ControlText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7358,7 +7358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ae355657e5a8d514b9574d20733e9248, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36319d262854d4849b78d61e13cf4f72, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
