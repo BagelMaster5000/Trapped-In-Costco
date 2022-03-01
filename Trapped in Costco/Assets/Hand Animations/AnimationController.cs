@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class AnimationController : MonoBehaviour
@@ -33,8 +34,40 @@ public class AnimationController : MonoBehaviour
     public void PlayThumbsUp() => handsAnimator.SetTrigger("ThumbsUp");
     public void PlayAngry() => handsAnimator.SetTrigger("Angry");
 
-    public void PlayPocket() => handsAnimator.SetTrigger("Pocket");
-    public void PlaySmash() => handsAnimator.SetTrigger("Smash");
+    public void PlayPocket()
+    {
+        handsAnimator.SetTrigger("Pocket");
+
+        StopAllCoroutines();
+        StartCoroutine(ResetAllTriggersAfterDelay(0.05f));
+    }
+    public void PlaySmash()
+    {
+        handsAnimator.SetTrigger("Smash");
+
+        StopAllCoroutines();
+        StartCoroutine(ResetAllTriggersAfterDelay(0.05f));
+    }
     public void PlaySpin() => handsAnimator.SetTrigger("Spin");
-    public void PlayThrow() => handsAnimator.SetTrigger("Throw");
+    public void PlayThrow()
+    {
+        handsAnimator.SetTrigger("Throw");
+
+        StopAllCoroutines();
+        StartCoroutine(ResetAllTriggersAfterDelay(0.05f));
+    }
+
+    IEnumerator ResetAllTriggersAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        handsAnimator.ResetTrigger("Grab");
+        handsAnimator.ResetTrigger("Smash");
+        handsAnimator.ResetTrigger("Spin");
+        handsAnimator.ResetTrigger("Clap");
+        handsAnimator.ResetTrigger("ThumbsUp");
+        handsAnimator.ResetTrigger("Angry");
+        handsAnimator.ResetTrigger("Pocket");
+        handsAnimator.ResetTrigger("Throw");
+    }
 }

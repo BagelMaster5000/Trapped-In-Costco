@@ -12,12 +12,22 @@ public class AudioController : MonoBehaviour
     [SerializeField] AudioClip[] itemSmash;
     AudioSource[] itemSmashSources;
     void PlaySmash() => itemSmashSources[Random.Range(0, itemSmashSources.Length)].Play();
+    [SerializeField] AudioClip[] itemThrow;
+    AudioSource[] itemThrowSources;
+    void PlayThrow() => itemThrowSources[Random.Range(0, itemThrowSources.Length)].Play();
+    [SerializeField] AudioClip[] itemSpin;
+    AudioSource[] itemSpinSources;
+    void PlaySpin() => itemSpinSources[Random.Range(0, itemSpinSources.Length)].Play();
     [SerializeField] AudioClip[] clap;
     AudioSource[] clapSources;
     void PlayClap() => clapSources[Random.Range(0, clapSources.Length)].Play();
     [SerializeField] AudioClip[] angry;
     AudioSource[] angrySources;
     void PlayAngry() => angrySources[Random.Range(0, angrySources.Length)].Play();
+    [SerializeField] PhoneVisibilityController phoneVisibilityController;
+    [SerializeField] AudioClip[] phoneClick;
+    AudioSource[] phoneClickSources;
+    void PlayPhoneClick() => phoneClickSources[Random.Range(0, phoneClickSources.Length)].Play();
 
     [SerializeField] AudioClip[] footsteps;
     AudioSource[] footstepsSources;
@@ -92,6 +102,20 @@ public class AudioController : MonoBehaviour
             itemSmashSources[a].clip = itemSmash[a];
         }
 
+        itemThrowSources = new AudioSource[itemThrow.Length];
+        for (int a = 0; a < itemThrowSources.Length; a++)
+        {
+            itemThrowSources[a] = gameObject.AddComponent<AudioSource>();
+            itemThrowSources[a].clip = itemThrow[a];
+        }
+
+        itemSpinSources = new AudioSource[itemSpin.Length];
+        for (int a = 0; a < itemSpinSources.Length; a++)
+        {
+            itemSpinSources[a] = gameObject.AddComponent<AudioSource>();
+            itemSpinSources[a].clip = itemSpin[a];
+        }
+
         clapSources = new AudioSource[clap.Length];
         for (int a = 0; a < clapSources.Length; a++)
         {
@@ -104,6 +128,13 @@ public class AudioController : MonoBehaviour
         {
             angrySources[a] = gameObject.AddComponent<AudioSource>();
             angrySources[a].clip = angry[a];
+        }
+
+        phoneClickSources = new AudioSource[phoneClick.Length];
+        for (int a = 0; a < phoneClickSources.Length; a++)
+        {
+            phoneClickSources[a] = gameObject.AddComponent<AudioSource>();
+            phoneClickSources[a].clip = phoneClick[a];
         }
 
 
@@ -155,11 +186,14 @@ public class AudioController : MonoBehaviour
 
     private void LinkSoundsToEvents()
     {
-        //GameController.staticReference.OnPickup += PlayGrab;
+        GameController.staticReference.OnPickup += PlayGrab;
         GameController.staticReference.OnPocket += PlayPocket;
         GameController.staticReference.OnSmash += PlaySmash;
+        GameController.staticReference.OnThrow += PlayThrow;
+        GameController.staticReference.OnSpin += PlaySpin;
         GameController.staticReference.OnClap += PlayClap;
         GameController.staticReference.OnAngry += PlayAngry;
+        phoneVisibilityController.OnPhoneVisible += PlayPhoneClick;
 
         GameController.staticReference.OnMove += (bool successfulMove) => { if (successfulMove) PlayFootsteps(); };
         // TODO nothing for quip

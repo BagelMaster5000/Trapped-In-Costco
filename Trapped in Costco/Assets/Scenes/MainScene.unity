@@ -2108,13 +2108,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 535708608d38342449b737c845eb1956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemGrab: []
+  itemGrab:
+  - {fileID: 8300000, guid: a23af99e2399c8e45b767e51dd14c765, type: 3}
+  - {fileID: 8300000, guid: aa5fda5a22ec28e49a06370989b332ed, type: 3}
+  - {fileID: 8300000, guid: 80f753d72e25a4a48bf6d6fdf518bf70, type: 3}
   itemPocket:
   - {fileID: 8300000, guid: 90169f3fc90344043933157006498eef, type: 3}
   - {fileID: 8300000, guid: 5838b2fe5213844419e4df1a99cc85eb, type: 3}
   itemSmash:
   - {fileID: 8300000, guid: a0259256fbf66274c99b4309c15fa097, type: 3}
   - {fileID: 8300000, guid: aef7224acdee70142bc5f9b34c7cd80b, type: 3}
+  itemThrow:
+  - {fileID: 8300000, guid: a73e910f2b52f8143b8789cf00339203, type: 3}
+  - {fileID: 8300000, guid: 43163c25174c6154fa08519f6481b77e, type: 3}
+  - {fileID: 8300000, guid: 363cf7e6a1a3dc2459c129d16c84dfa4, type: 3}
+  itemSpin:
+  - {fileID: 8300000, guid: 992005d337653f443975adefdbbdfe74, type: 3}
+  - {fileID: 8300000, guid: b767c80849b83b145beea0f82aad8fad, type: 3}
+  - {fileID: 8300000, guid: 77e12dfb50974fb439a1b9d352438460, type: 3}
   clap:
   - {fileID: 8300000, guid: a0c38d835cdae044f8a5afd941a0168c, type: 3}
   - {fileID: 8300000, guid: 57297732c5d1c7e4d8433ef4f8d22972, type: 3}
