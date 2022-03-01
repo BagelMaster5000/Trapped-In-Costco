@@ -15,7 +15,8 @@ public class MoveArrowVisibilityController : MonoBehaviour
         GameController.staticReference.OnArrivedAtLocation += ArrivedAtLocation;
 
         GameController.staticReference.OnBlockedByFreeSamples += RedAllArrows;
-        GameController.staticReference.OnClearedFreeSamples += ArrivedAtLocation;
+        GameController.staticReference.OnBlockedByMembershipEmployee += RedForwardArrow;
+        GameController.staticReference.OnClearedBlockage += ArrivedAtLocation;
     }
 
     void Start()
@@ -60,5 +61,11 @@ public class MoveArrowVisibilityController : MonoBehaviour
             arrows[a].SetActive(true);
             arrowImages[a].color = Color.red;
         }
+    }
+
+    public void RedForwardArrow()
+    {
+        arrows[0].SetActive(true);
+        arrowImages[0].color = Color.red;
     }
 }

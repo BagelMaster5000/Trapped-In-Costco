@@ -2133,6 +2133,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 38c6ff0e05e1b154cb58521302a4a0f9, type: 3}
   - {fileID: 8300000, guid: 9c55948a2088b4344bfc33f3c82d9171, type: 3}
   - {fileID: 8300000, guid: f8b23f31b7fb46b4086373ac974444a2, type: 3}
+  phoneVisibilityController: {fileID: 1008985976}
+  phoneClick:
+  - {fileID: 8300000, guid: a4ac40454e1b4144ebb754eeb661b4a3, type: 3}
+  - {fileID: 8300000, guid: 322ae46e25ce196439aa62b6b098ce1b, type: 3}
   footsteps:
   - {fileID: 8300000, guid: f90ba603f5f6b834abfc868472dfd7a7, type: 3}
   - {fileID: 8300000, guid: 8108455c45fc0204b9cde2bfa30861da, type: 3}

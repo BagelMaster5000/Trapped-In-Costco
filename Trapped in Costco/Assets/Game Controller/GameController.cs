@@ -101,7 +101,7 @@ public class GameController : MonoBehaviour
 
     public Action OnBlockedByFreeSamples;
     public Action OnBlockedByMembershipEmployee;
-    public Action<Location> OnClearedFreeSamples;
+    public Action<Location> OnClearedBlockage;
 
     #region Setup
     private void Awake()
@@ -334,8 +334,6 @@ public class GameController : MonoBehaviour
 
             if (remainingButtonMashes <= 0)
             {
-                OnClearedFreeSamples?.Invoke(currentLocation);
-
                 ClearBlockedDirections();
                 freeSamplesStand.Killed();
 
@@ -490,6 +488,8 @@ public class GameController : MonoBehaviour
 
         for (int d = 0; d < curBlockedDirections.Length; d++)
             curBlockedDirections[d] = false;
+
+        OnClearedBlockage?.Invoke(currentLocation);
     }
 
     void RefreshItemsAtCurrentLocation()
