@@ -227,7 +227,5 @@ public class AudioController : MonoBehaviour
 
         // TODO Play music on game start
         // TODO Stop music on game win or restart
-        // TODO Play ambience on start of scene
-        // TODO Stop ambience restart
     }
 }

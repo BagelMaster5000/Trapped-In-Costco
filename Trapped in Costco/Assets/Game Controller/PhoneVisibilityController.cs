@@ -20,6 +20,12 @@ public class PhoneVisibilityController : MonoBehaviour
         {
             phoneToggleInput.Enable();
         };
+
+        GameController.staticReference.OnGameRestart += () =>
+        {
+            OnPhoneVisible = null;
+            OnPhoneInvisible = null;
+        };
     }
 
     private void Start()

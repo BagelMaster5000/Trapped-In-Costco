@@ -130,9 +130,10 @@ public class GameController : MonoBehaviour
         BlockadesSetup();
         FreeSamplesSetup();
 
-        for (int s = 0; s < shoppingListCompletion.Length; s++)
-            shoppingListCompletion[s] = true;
-        RefreshShoppingListTexts();
+        // DEBUG complete shopping list at start of game
+        //for (int s = 0; s < shoppingListCompletion.Length; s++)
+        //    shoppingListCompletion[s] = true;
+        //RefreshShoppingListTexts();
     }
 
     private void InputsSetup()
@@ -318,8 +319,56 @@ public class GameController : MonoBehaviour
             OnGameUnpause?.Invoke();
         }
     }
-    public void RestartGame() { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
-    public void ExitGame() { Application.Quit(); }
+    public void RestartGame()
+    {
+        ClearAllActionSubscriptions();
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    private void ClearAllActionSubscriptions()
+    {
+        OnGameStart = null;
+        OnGamePause = null;
+        OnGameUnpause = null;
+        OnGameWin = null;
+        OnGameRestart = null;
+        OnGameExit = null;
+
+        OnArrivedAtLocation = null;
+        OnQuip = null;
+
+        OnMove = null;
+        OnMoveUp = null;
+        OnMoveRight = null;
+        OnMoveDown = null;
+        OnMoveLeft = null;
+        OnTryMoveWhileFreeSamples = null;
+        OnTryExitBeforeShoppingListComplete = null;
+
+        OnPickup = null;
+        OnThrow = null;
+        OnPocket = null;
+        OnSmash = null;
+        OnSpin = null;
+        OnClap = null;
+        OnThumbsUp = null;
+        OnAngry = null;
+
+        OnGotCorrectItem = null;
+        OnGotWrongItem = null;
+        OnShoppingListComplete = null;
+
+        OnBlockedByFreeSamples = null;
+        OnBlockedByMembershipEmployee = null;
+        OnClearedBlockage = null;
+        OnBlockedFromLeaving = null;
+        OnAbleToLeave = null;
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 
     #region Movement
     void MoveInputRecieved(Vector2 input)
