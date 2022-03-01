@@ -103,6 +103,8 @@ public class GameController : MonoBehaviour
     public Action OnBlockedByFreeSamples;
     public Action OnBlockedByMembershipEmployee;
     public Action<Location> OnClearedBlockage;
+    public Action OnBlockedFromLeaving;
+    public Action OnAbleToLeave;
 
     #region Setup
     private void Awake()
@@ -128,9 +130,9 @@ public class GameController : MonoBehaviour
         BlockadesSetup();
         FreeSamplesSetup();
 
-        //for (int s = 0; s < shoppingListCompletion.Length; s++)
-        //    shoppingListCompletion[s] = true;
-        //RefreshShoppingListTexts();
+        for (int s = 0; s < shoppingListCompletion.Length; s++)
+            shoppingListCompletion[s] = true;
+        RefreshShoppingListTexts();
     }
 
     private void InputsSetup()
@@ -383,7 +385,7 @@ public class GameController : MonoBehaviour
 
                 OnGameWin?.Invoke();
             }
-            else
+            else if (!curBlockedDirections[0])
             {
                 OnTryExitBeforeShoppingListComplete?.Invoke();
             }
@@ -445,6 +447,8 @@ public class GameController : MonoBehaviour
 
         background.sprite = currentLocation.background;
         RefreshItemsAtCurrentLocation();
+
+        InvokeSpecialEventsIfOnLastLocation();
     }
 
     private void DestroyObstaclesFromPreviousLocation(Location previousLocation)
@@ -501,7 +505,22 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void NewLocationQuip()
+    void InvokeSpecialEventsIfOnLastLocation()
+    {
+        if (currentLocation == allLocations[allLocations.Length - 1])
+        {
+            if (!IsShoppingListComplete())
+            {
+                OnBlockedFromLeaving?.Invoke();
+            }
+            else
+            {
+                OnAbleToLeave?.Invoke();
+            }
+        }
+    }
+
+    void NewLocationQuip()
     {
         if (currentLocation.allQuips.Length > 0 && UnityEngine.Random.Range(0.0f, 1.0f) < currentLocation.quipChance)
         {
@@ -647,6 +666,8 @@ public class GameController : MonoBehaviour
                 {
                     OnShoppingListComplete?.Invoke();
                 }
+
+                InvokeSpecialEventsIfOnLastLocation();
 
                 OnGotCorrectItem?.Invoke();
 
