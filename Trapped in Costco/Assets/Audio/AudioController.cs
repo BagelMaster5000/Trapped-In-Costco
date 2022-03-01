@@ -38,6 +38,9 @@ public class AudioController : MonoBehaviour
     [SerializeField] AudioClip[] sampleMunching;
     AudioSource[] sampleMunchingSources;
     void PlaySampleMunch() => sampleMunchingSources[Random.Range(0, sampleMunchingSources.Length)].Play();
+    [SerializeField] AudioClip[] employeeDeath;
+    AudioSource[] employeeDeathSources;
+    void PlayEmployeeDeath(Location dummy) => employeeDeathSources[Random.Range(0, employeeDeathSources.Length)].Play();
 
 
     [Header("Out of Game World")]
@@ -107,6 +110,7 @@ public class AudioController : MonoBehaviour
         {
             itemThrowSources[a] = gameObject.AddComponent<AudioSource>();
             itemThrowSources[a].clip = itemThrow[a];
+            itemThrowSources[a].volume = 0.7f;
         }
 
         itemSpinSources = new AudioSource[itemSpin.Length];
@@ -159,6 +163,13 @@ public class AudioController : MonoBehaviour
             sampleMunchingSources[a].clip = sampleMunching[a];
         }
 
+        employeeDeathSources = new AudioSource[employeeDeath.Length];
+        for (int a = 0; a < employeeDeathSources.Length; a++)
+        {
+            employeeDeathSources[a] = gameObject.AddComponent<AudioSource>();
+            employeeDeathSources[a].clip = employeeDeath[a];
+        }
+
 
         menuNoiseSource = gameObject.AddComponent<AudioSource>();
 
@@ -182,6 +193,8 @@ public class AudioController : MonoBehaviour
 
         ambienceSource = gameObject.AddComponent<AudioSource>();
         ambienceSource.clip = ambience;
+        ambienceSource.loop = true;
+        ambienceSource.Play();
     }
 
     private void LinkSoundsToEvents()
@@ -198,6 +211,7 @@ public class AudioController : MonoBehaviour
         GameController.staticReference.OnMove += (bool successfulMove) => { if (successfulMove) PlayFootsteps(); };
         // TODO nothing for quip
         GameController.staticReference.OnTryMoveWhileFreeSamples += PlaySampleMunch;
+        GameController.staticReference.OnClearedBlockage += PlayEmployeeDeath;
 
         GameController.staticReference.OnGameStart += PlayStartGame;
         GameController.staticReference.OnGamePause += PlayPauseGame;

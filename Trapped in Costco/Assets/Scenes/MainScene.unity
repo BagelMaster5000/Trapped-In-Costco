@@ -2150,6 +2150,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3c03f49282910154eb2ebd1526e864c3, type: 3}
   - {fileID: 8300000, guid: 3134b6c51ccb5104d9432cc2f1955896, type: 3}
   - {fileID: 8300000, guid: 49b4634576f106246b1ef50d7af88b0c, type: 3}
+  employeeDeath:
+  - {fileID: 8300000, guid: b2a2ba1485392f34283f3269339b94d2, type: 3}
+  - {fileID: 8300000, guid: c6307adceba2ac44897ec673c3ce0ef8, type: 3}
   startGame: {fileID: 8300000, guid: cd1ed5df5b0dca346ba632d59e881a1e, type: 3}
   pauseGame: {fileID: 8300000, guid: ee4304d0a2909a046bfc6c3f58443411, type: 3}
   unpauseGame: {fileID: 8300000, guid: 8d35049ca431f584c886ba8b494c3c51, type: 3}
@@ -2159,7 +2162,7 @@ MonoBehaviour:
   shoppingListComplete: {fileID: 8300000, guid: 25d34dcc99cebf04db697d555a88950e, type: 3}
   costcoEscaped: {fileID: 0}
   music: {fileID: 0}
-  ambience: {fileID: 0}
+  ambience: {fileID: 8300000, guid: 46de1cc00f2411c44ac53d7627bbe66c, type: 3}
 --- !u!1 &559521244
 GameObject:
   m_ObjectHideFlags: 0
