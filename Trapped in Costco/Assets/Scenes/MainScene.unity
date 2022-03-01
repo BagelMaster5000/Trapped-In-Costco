@@ -2146,6 +2146,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b5e2235583d335b4db6cb8e3c39a56d1, type: 3}
   - {fileID: 8300000, guid: 48bac93ac62bef04cb1aca44a496fb91, type: 3}
   - {fileID: 8300000, guid: d8fa30da0c43f8041ac6ccf21d2a0f60, type: 3}
+  quipController: {fileID: 1439282619}
   sampleMunching:
   - {fileID: 8300000, guid: 3c03f49282910154eb2ebd1526e864c3, type: 3}
   - {fileID: 8300000, guid: 3134b6c51ccb5104d9432cc2f1955896, type: 3}

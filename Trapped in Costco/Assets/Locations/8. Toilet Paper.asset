@@ -16,7 +16,7 @@ MonoBehaviour:
   background: {fileID: 21300000, guid: 6cb682820600bdf47a5d561e05f77c03, type: 3}
   upLocation: {fileID: 11400000, guid: 7545a8918c77a6a4e93813af691b8bfc, type: 2}
   rightLocation: {fileID: 11400000, guid: 4972ead9b4a843641b992886b7b86594, type: 2}
-  downLocation: {fileID: 0}
+  downLocation: {fileID: 11400000, guid: e1d47e3947a681d459942c916472251a, type: 2}
   leftLocation: {fileID: 11400000, guid: 7a2e1963824368545b74151039d766a6, type: 2}
   itemsToSpawn: []
   quipChance: 0.3

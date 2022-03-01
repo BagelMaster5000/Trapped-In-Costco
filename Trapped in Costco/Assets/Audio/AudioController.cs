@@ -34,6 +34,7 @@ public class AudioController : MonoBehaviour
     void PlayFootsteps() => footstepsSources[Random.Range(0, footstepsSources.Length)].Play();
     [SerializeField] AudioClip[] quipGrunt;
     AudioSource[] quipGruntSources;
+    [SerializeField] QuipController quipController;
     void PlayQuipGrunt() => quipGruntSources[Random.Range(0, quipGruntSources.Length)].Play();
     [SerializeField] AudioClip[] sampleMunching;
     AudioSource[] sampleMunchingSources;
@@ -209,7 +210,7 @@ public class AudioController : MonoBehaviour
         phoneVisibilityController.OnPhoneVisible += PlayPhoneClick;
 
         GameController.staticReference.OnMove += (bool successfulMove) => { if (successfulMove) PlayFootsteps(); };
-        // TODO nothing for quip
+        quipController.OnQuipSound += PlayQuipGrunt;
         GameController.staticReference.OnTryMoveWhileFreeSamples += PlaySampleMunch;
         GameController.staticReference.OnClearedBlockage += PlayEmployeeDeath;
 

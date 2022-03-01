@@ -30,6 +30,8 @@ public class QuipController : MonoBehaviour
 
     Queue<string> quipQueue = new Queue<string>();
 
+    public System.Action OnQuipSound;
+
     private void Awake()
     {
         GameController.staticReference.OnQuip += AddQuip;
@@ -106,12 +108,20 @@ public class QuipController : MonoBehaviour
         yield return new WaitForSeconds(quipStartDelay);
         playingAnimation = true;
 
+        int quipSoundInterval = 10, quipSoundCountdown = 0;
         int quipCharactersDisplayed = 1;
         while (quipCharactersDisplayed <= quip.Length)
         {
             quipText.text = quip.Substring(0, quipCharactersDisplayed) +
                 "<alpha=100>" +
                 quip.Substring(quipCharactersDisplayed, quip.Length - quipCharactersDisplayed);
+
+            quipSoundCountdown--;
+            if (quipSoundCountdown <= 0)
+            {
+                quipSoundCountdown = quipSoundInterval;
+                OnQuipSound?.Invoke();
+            }
 
             yield return new WaitForSeconds(quipLetterDisplayInterval);
             quipCharactersDisplayed++;
