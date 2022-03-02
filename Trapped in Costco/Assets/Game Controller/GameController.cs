@@ -79,7 +79,7 @@ public class GameController : MonoBehaviour
     public Action<Location> OnArrivedAtLocation;
     public Action<string> OnQuip;
 
-    public Action<bool> OnMove;
+    public Action<bool> OnMove; // bool able to move
     public Action OnMoveUp;
     public Action OnMoveRight;
     public Action OnMoveDown;
