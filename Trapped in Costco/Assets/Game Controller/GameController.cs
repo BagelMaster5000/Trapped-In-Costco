@@ -121,7 +121,7 @@ public class GameController : MonoBehaviour
         ShoppingListSetup();
 
         background.sprite = currentLocation.background;
-        OnArrivedAtLocation?.Invoke(currentLocation);
+        OnGameStart += () => { OnArrivedAtLocation?.Invoke(currentLocation); };
 
         StartCoroutine(ContinuousItemLerpingAndRotation());
         ItemsInLocationFoldersSetup();
