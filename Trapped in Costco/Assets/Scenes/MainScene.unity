@@ -2237,7 +2237,7 @@ MonoBehaviour:
   gotWrongItem: {fileID: 8300000, guid: bc48e222e0dbbd1499e18a83a2a301ae, type: 3}
   shoppingListComplete: {fileID: 8300000, guid: 25d34dcc99cebf04db697d555a88950e, type: 3}
   costcoEscaped: {fileID: 0}
-  music: {fileID: 0}
+  music: {fileID: 8300000, guid: 2470a319546c35e439a6cbd5c25ee2d3, type: 3}
   ambience: {fileID: 8300000, guid: 46de1cc00f2411c44ac53d7627bbe66c, type: 3}
 --- !u!1 &559521244
 GameObject:

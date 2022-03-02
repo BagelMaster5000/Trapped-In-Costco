@@ -73,6 +73,8 @@ public class AudioController : MonoBehaviour
     [Header("Music and Ambience")]
     [SerializeField] AudioClip music;
     AudioSource musicSource;
+    void PlayMusic() => musicSource.Play();
+    void StopMusic() => musicSource.Stop();
     [SerializeField] AudioClip ambience;
     AudioSource ambienceSource;
 
@@ -191,6 +193,7 @@ public class AudioController : MonoBehaviour
 
         musicSource = gameObject.AddComponent<AudioSource>();
         musicSource.clip = music;
+        musicSource.loop = true;
 
         ambienceSource = gameObject.AddComponent<AudioSource>();
         ambienceSource.clip = ambience;
@@ -225,7 +228,8 @@ public class AudioController : MonoBehaviour
         GameController.staticReference.OnShoppingListComplete += PlayShoppingListComplete;
         GameController.staticReference.OnGameWin += PlayCostcoEscaped;
 
-        // TODO Play music on game start
-        // TODO Stop music on game win or restart
+        GameController.staticReference.OnGameStart += PlayMusic;
+        GameController.staticReference.OnGameWin += StopMusic;
+        GameController.staticReference.OnGameRestart += StopMusic;
     }
 }
