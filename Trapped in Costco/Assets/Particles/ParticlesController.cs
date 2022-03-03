@@ -14,15 +14,12 @@ public class ParticlesController : MonoBehaviour
         GameController.staticReference.OnGotCorrectItem += () => { sparkleParticles.Play(); };
         GameController.staticReference.OnClearedBlockage += (Location dummy) => { boneParticles.Play(); };
 
-        GameController.staticReference.OnMove += (bool ableToMove) =>
+        GameController.staticReference.OnArrivedAtLocation += (Location dummy) =>
         {
-            if (ableToMove)
-            {
-                smashParticles.Clear();
-                eatParticles.Clear();
-                sparkleParticles.Clear();
-                boneParticles.Clear();
-            }
+            smashParticles.Clear();
+            eatParticles.Clear();
+            sparkleParticles.Clear();
+            boneParticles.Clear();
         };
     }
 }

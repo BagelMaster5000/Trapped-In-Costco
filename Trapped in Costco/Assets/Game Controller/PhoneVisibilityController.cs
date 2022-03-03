@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,8 @@ public class PhoneVisibilityController : MonoBehaviour
 
     public Action OnPhoneVisible;
     public Action OnPhoneInvisible;
+
+    [SerializeField] TextMeshProUGUI phoneAboveText;
 
     private void Awake()
     {
@@ -25,6 +28,12 @@ public class PhoneVisibilityController : MonoBehaviour
         {
             OnPhoneVisible = null;
             OnPhoneInvisible = null;
+        };
+
+        GameController.staticReference.OnShoppingListComplete += () =>
+        {
+            phoneAboveText.text = "Time to leave!";
+            phoneAboveText.color = Color.green;
         };
     }
 

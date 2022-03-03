@@ -375,57 +375,40 @@ public class GameController : MonoBehaviour
     {
         if (gameState != GameState.PLAYING) return;
 
-        if (freeSampleLocations[currentLocation.index])
-        {
-            remainingButtonMashes--;
-            Transform currentLocationFolder = itemLocationFolders[currentLocation.index].transform;
-            FreeSamplesStand freeSamplesStand = currentLocationFolder.GetComponentInChildren<FreeSamplesStand>();
-            freeSamplesStand.Attacked();
-
-            OnTryMoveWhileFreeSamples?.Invoke();
-
-            if (remainingButtonMashes <= 0)
-            {
-                ClearBlockedDirections();
-                freeSamplesStand.Killed();
-
-                afterFreeSampleKillMovementReenableTime = Time.time + afterFreeSampleKillMovementDisableTime;
-            }
-        }
-
-        bool movementDisabled = Time.time < afterFreeSampleKillMovementReenableTime;
-
         if (input.y > 0.8f)
         {
-            OnMove?.Invoke(currentLocation.upLocation != null && !curBlockedDirections[0] && !movementDisabled);
+            OnMove?.Invoke(currentLocation.upLocation != null && !curBlockedDirections[0]);
 
-            if (!movementDisabled) { MoveUp(); }
-            else { OnMoveUp?.Invoke(); }
+            MoveUp();
         }
         else if (input.x > 0.8f)
         {
-            OnMove?.Invoke(currentLocation.rightLocation != null && !curBlockedDirections[1] && !movementDisabled);
+            OnMove?.Invoke(currentLocation.rightLocation != null && !curBlockedDirections[1]);
 
-            if (!movementDisabled) { MoveRight(); }
-            else { OnMoveRight?.Invoke(); }
+            MoveRight();
         }
         else if (input.y < -0.8f)
         {
-            OnMove?.Invoke(currentLocation.downLocation != null && !curBlockedDirections[2] && !movementDisabled);
+            OnMove?.Invoke(currentLocation.downLocation != null && !curBlockedDirections[2]);
 
-            if (!movementDisabled) { MoveDown(); }
-            else { OnMoveDown?.Invoke(); }
+            MoveDown();
         }
         else if (input.x < -0.8f)
         {
-            OnMove?.Invoke(currentLocation.leftLocation != null && !curBlockedDirections[3] && !movementDisabled);
+            OnMove?.Invoke(currentLocation.leftLocation != null && !curBlockedDirections[3]);
 
-            if (!movementDisabled) { MoveLeft(); }
-            else { OnMoveLeft?.Invoke(); }
+            MoveLeft();
         }
     }
+
     public void MoveUp()
     {
+        TryDevourFreeSample();
+
+        OnMoveUp?.Invoke();
+
+        if (Time.time < afterFreeSampleKillMovementReenableTime) return;
+
         if (currentLocation == allLocations[allLocations.Length - 1])
         {
             if (IsShoppingListComplete())
@@ -446,41 +429,73 @@ public class GameController : MonoBehaviour
             currentLocation = currentLocation.upLocation;
             ArriveAtLocation(previousLocation);
         }
-
-        OnMoveUp?.Invoke();
     }
     public void MoveRight()
     {
+        TryDevourFreeSample();
+
+        OnMoveRight?.Invoke();
+
+        if (Time.time < afterFreeSampleKillMovementReenableTime) return;
+
         if (currentLocation.rightLocation != null && !curBlockedDirections[1])
         {
             Location previousLocation = currentLocation;
             currentLocation = currentLocation.rightLocation;
             ArriveAtLocation(previousLocation);
         }
-
-        OnMoveRight?.Invoke();
     }
     public void MoveDown()
     {
+        TryDevourFreeSample();
+
+        OnMoveDown?.Invoke();
+
+        if (Time.time < afterFreeSampleKillMovementReenableTime) return;
+
         if (currentLocation.downLocation != null && !curBlockedDirections[2])
         {
             Location previousLocation = currentLocation;
             currentLocation = currentLocation.downLocation;
             ArriveAtLocation(previousLocation);
         }
-
-        OnMoveDown?.Invoke();
     }
     public void MoveLeft()
     {
+        TryDevourFreeSample();
+
+        OnMoveLeft?.Invoke();
+
+        if (Time.time < afterFreeSampleKillMovementReenableTime) return;
+
         if (currentLocation.leftLocation != null && !curBlockedDirections[3])
         {
             Location previousLocation = currentLocation;
             currentLocation = currentLocation.leftLocation;
             ArriveAtLocation(previousLocation);
         }
+    }
 
-        OnMoveLeft?.Invoke();
+
+    private void TryDevourFreeSample()
+    {
+        if (freeSampleLocations[currentLocation.index])
+        {
+            remainingButtonMashes--;
+            Transform currentLocationFolder = itemLocationFolders[currentLocation.index].transform;
+            FreeSamplesStand freeSamplesStand = currentLocationFolder.GetComponentInChildren<FreeSamplesStand>();
+            freeSamplesStand.Attacked();
+
+            OnTryMoveWhileFreeSamples?.Invoke();
+
+            if (remainingButtonMashes <= 0)
+            {
+                ClearBlockedDirections();
+                freeSamplesStand.Killed();
+
+                afterFreeSampleKillMovementReenableTime = Time.time + afterFreeSampleKillMovementDisableTime;
+            }
+        }
     }
     #endregion
 
@@ -674,6 +689,10 @@ public class GameController : MonoBehaviour
             heldItem.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             heldItem.GetComponent<Rigidbody>().velocity = Vector3.zero;
             hit.transform.parent = itemHoldLoc;
+
+            // Disabling sparkle graphic behind all untouched items
+            if (heldItem.GetComponentInChildren<SpriteRenderer>() != null)
+                heldItem.GetComponentInChildren<SpriteRenderer>().gameObject.SetActive(false);
 
             OnPickup?.Invoke(heldItem.name);
         }
